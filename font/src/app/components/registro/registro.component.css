@@ -1,0 +1,58 @@
+#container{
+    width: 20%;
+    height: 40%;
+    margin-left: 22%;
+    margin-top: 10%;
+    position: absolute;
+}
+@media only screen and (max-width: 1100px) {
+    #container{
+        width: 30%;
+        height: 45%;
+        margin-left: 15%;
+    }
+}
+
+@media only screen and (max-width: 837px) {
+    #container{
+        width: 35%;
+        height: 50%;
+        margin-left: 10%;
+    }
+}
+
+@media only screen and (max-width: 583px) {
+    #container{
+        width: 60%;
+        height: 40%;
+        margin-left: 20%;
+    }
+}
+
+input{
+    background-color: rgba(255, 255, 255, 0.85);
+    width: 90%;
+    height: 18%;
+    font-size: x-large;
+    margin-top: 2%;
+    padding: 5%;
+    border-radius: 10px;
+    float: left;
+}
+
+button{
+    background-color: #EC9063;
+    width: 90%;
+    height: 18%;
+    padding: 5%;
+    margin-top: 2%;
+    margin-left: 5%;
+    font-size: x-large;
+    color: white;
+    border-radius: 10px;
+    float: left;
+}
+
+button:hover{
+    transform: scaleY(1.2);
+}

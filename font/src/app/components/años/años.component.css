@@ -1,0 +1,27 @@
+#container{
+    width: 90%;
+    height: 15%;
+    margin-left: 5%;
+    float: left;
+}
+
+.botAños{
+    width: 20%;
+    height: 90%;
+    margin-left: 4%;
+    float: left;
+}
+
+.botAños:hover{
+    transform: scale(1.1);
+}
+
+button{
+    background-color: #C75133;
+    width: 100%;
+    height: 50%;
+    margin-top: 10%;
+    font-size: xx-large;
+    color: white;
+    border-radius: 10px;
+}

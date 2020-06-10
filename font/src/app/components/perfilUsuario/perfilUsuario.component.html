@@ -1,0 +1,30 @@
+<div id="container">
+    <header id="heaUsuario">
+        <div id="logo">
+            <img [src] = logo alt="logo">
+        </div>
+        <div id="nombre">
+            Vicadisk
+        </div>
+        <div id="buscar">
+            <input placeholder="Busca tu cancion">
+            <button></button>
+        </div>
+        <div id="foto">
+            <img [src] = foto alt="fotoUsuario"/>
+        </div>       
+    </header>
+    <nav id="navUsuario">
+        <ul>
+            <li id="perfil" (mouseover)='mostrar()' (mouseout)='ocultar()'>Perfil</li>
+                <ul id="ulPerfil" (mouseover)='mostrar()' (mouseout)='ocultar()'>
+                    <li class="liPerfil" routerLink="/datos">Datos</li>
+                    <li class="liPerfil">preferidas</li>
+                    <li class="liPerfil">Compartir</li>
+                </ul>
+            <li>{{correo}}</li>
+            <li (click)='cerrar()'>Cerrar</li>
+        </ul>
+
+    </nav>
+</div>

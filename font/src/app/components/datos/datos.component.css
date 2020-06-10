@@ -1,0 +1,56 @@
+#container{
+    background-color: rgba(199, 81, 51, 1);
+    width: 25%;
+    height: 65%;
+    margin-left: 35%;
+    margin-top: 20%;
+    border-radius: 10px;
+    position: absolute;
+
+}
+#imgUsuario{
+    width: 30%;
+    height: 25%;
+    margin-top: 2%;
+    margin-left: 35%;
+    margin-right: 35%;
+    float: left;
+}
+
+#cerrar{
+    width: 50%;
+    height: 10%;
+    margin-left: 25%;
+    float: left;
+}
+span{
+    width: 100%;
+    color: white;
+    text-align: center;
+    float: left;
+}
+#datos{
+    width: 60%;
+    height: 50%;
+    margin-left:15%;
+    float: left;
+}
+
+input{
+    width: 100%;
+    height: 12%;
+    margin-top: 2%;
+    border-radius: 5px;
+    float: left;
+}
+
+button{
+    background-color: rgba(199, 81, 51, 1);
+    width: 100%;
+    height: 18%;
+    margin-top: 2%;
+    color: white;
+    font-size: x-large;
+    border: none;
+    border-radius: 10px;
+}

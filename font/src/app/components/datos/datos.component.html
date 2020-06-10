@@ -1,0 +1,31 @@
+<!-- Traer la imagen de perfil de usuario
+       
+      <img id='imgUsuario'/> 
+    // segunda opcion
+      <img id="imgUsuario" src="{{ rutaImagen }}"
+    -->
+<div id="container">
+<img id="imgUsuario" />  
+<span> Bienvenid@ {{ identidad.nombre }}</span>
+<button routerLink="/" id="cerrar">cerrar</button>
+
+<!-- Formulario Actualizar Datos Usuario-->
+
+<form id="datos" #formularioActualizado="ngForm" (ngSubmit)="actualizarUsuario()">
+    <input type="text" placeholder="Nombre" name="nombre"
+    #nombre="ngModel" [(ngModel)]="usuarioActualizar.nombre">
+    <input type="text" placeholder="apellido" name="apellido"
+    #apellido="ngModel" [(ngModel)] = "usuarioActualizar.apellido">
+    <input type="text" placeholder="Correo"  name="correo"
+    #correo="ngModel" [(ngModel)]="usuarioActualizar.correo">
+    <input type="password" placeholder="Contraseña" name="contrasena"
+    #contrasena="ngModel" [(ngModel)]="usuarioActualizar.contrasena">
+    <br><br>
+
+    <input type="file" placeholder="Subir Imagen" (change)="subirArchivo($event)">
+    <!--
+        previsualizacion de la imagen
+    -->
+    <button type="submit">Actualizar Datos</button>
+</form>
+</div>
