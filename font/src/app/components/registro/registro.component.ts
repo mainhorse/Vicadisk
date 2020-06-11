@@ -36,11 +36,13 @@ export class registroComponent{
     registrarUsuario(){
         this.usuarioServicio.registro(this.usuarioRegistro).subscribe(
             (response : any)=>{
+                
                 let usuario = response.usuario;
+                let mensaje = response.message;
                 this.usuarioRegistro = usuario;
-
+                console.log(this.usuarioRegistro)
                 if(!this.usuarioRegistro._id){
-                    alert('Error al registrarse')
+                    alert('Datos incorrectos')
                 }else {
                     alert(`Registro exitoso! Iniciar sesion con ${this.usuarioRegistro.correo}`);
                     this.usuarioRegistro = new Usuario('','','','','','usuario','');
@@ -50,7 +52,7 @@ export class registroComponent{
             error =>{
                 var errorMensaje = <any>error;
                 if(errorMensaje != null){
-                    console.log(error);
+                    //console.log(error);
                 }
             }
         )

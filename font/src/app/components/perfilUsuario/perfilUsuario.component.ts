@@ -26,7 +26,9 @@ export class perfilUsuarioComponent{
     }
 
     cerrar(){
+        localStorage.clear();
         localStorage.setItem('pagina', '');
+        window.location.reload();
     }
 
     
