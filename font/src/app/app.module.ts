@@ -22,6 +22,7 @@ import { añosComponent } from './components/años/años.component';
 import { mainUserComponent } from './components/mainUser/mainUser.component';
 import { footerComponent } from './components/footer/footer.component';
 import { mainSudoComponent } from './components/mainSudo/mainSudo.component';
+import { SliderComponent } from './components/slider/slider.component';
 
 
 
@@ -37,7 +38,8 @@ import { mainSudoComponent } from './components/mainSudo/mainSudo.component';
     añosComponent,
     mainUserComponent,
     mainSudoComponent,
-    footerComponent
+    footerComponent,
+    SliderComponent
     
   ],
   imports: [
