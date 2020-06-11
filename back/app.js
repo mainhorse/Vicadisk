@@ -6,7 +6,8 @@ const cors = require('cors');
 
 
 // declaracion de la constante de las rutas de usuario
-const usuarioRutas = require('./rutas/UsuarioRutas')
+const usuarioRutas = require('./rutas/UsuarioRutas');
+const cancionesRutas = require('./rutas/CancionRutas');
 
 
 // --MIDDLEWARE--
@@ -15,7 +16,8 @@ app.use(express.json());
 app.use(cors());
 
 // consumo de las rutas
-app.use('/api', usuarioRutas)
+app.use('/api', usuarioRutas);
+app.use('/api', cancionesRutas);
 
 // --FIN MIDDLEWARES--
 
