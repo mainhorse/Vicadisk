@@ -1,4 +1,4 @@
-const Usuario = require('../modelo/usuario');
+const Usuario = require('../modelo/Usuario');
 // Importar el módulo file System de node 
 const fs= require('fs');
 // Importar el modulo path
@@ -103,7 +103,7 @@ function subirImg(req, res){
 
         // Haremos un split para separar elementos
         // Esto nos generara un arreglo de datos
-        var partirArchivo = rutaArchivo.split('\\');
+        var partirArchivo = rutaArchivo.split('/');
         console.log(`partir Archivo: ${partirArchivo}`);
     
         // acceder a la posicion que contiene el nombre del archivo

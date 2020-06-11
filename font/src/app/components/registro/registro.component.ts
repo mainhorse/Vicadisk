@@ -2,6 +2,8 @@ import { Component} from '@angular/core';
 import { Usuario } from '../../modelo/usuario'
 //importar el servicio usuario
 import { UsuarioService } from '../../service/usuario.service';
+//importar sweetalert
+import Swal from 'sweetalert2';
 
 // importamos el objeto Router
 // ActivadeRouter -> Nos indica una ruta activa
@@ -41,8 +43,26 @@ export class registroComponent{
 
                 if(!this.usuarioRegistro._id){
                     alert('Error al registrarse')
+
                 }else {
-                    alert(`Registro exitoso! Iniciar sesion con ${this.usuarioRegistro.correo}`);
+                    /* alert(`Registro exitoso! Iniciar sesion con ${this.usuarioRegistro.correo}`); */
+                    
+                    // sweetAlert
+                    Swal.fire({
+                        title: 'Registro exitoso!',
+                        text: `Ya estas registrado! Iniciar sesion con ${this.usuarioRegistro.correo}`,
+                        imageUrl: '../../assets/img/flores.jpeg',
+                        imageWidth: 400,
+                        imageHeight: 200,
+                        imageAlt: 'Custom image', 
+                        confirmButtonColor: '#F76363',
+                        backdrop: ` rgba(0,0,0,0.5)
+                                    left top
+                                    no-repeat`
+                    }).finally
+
+                    // cierre sweetAlert
+
                     this.usuarioRegistro = new Usuario('','','','','','usuario','');
                     this._router.navigate(['/'])
                 }
