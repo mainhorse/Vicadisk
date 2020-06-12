@@ -14,7 +14,7 @@ function registrarUsuario(req, res){
     usuario.apellido = parametros.apellido;
     usuario.correo = parametros.correo;
     usuario.contrasena = parametros.contrasena;
-    usuario.rol = 'Usuario'; // podemos quemar en la base de datos el registro del usuario con rol admin
+    usuario.rol = 'usuario'; // podemos quemar en la base de datos el registro del usuario con rol admin
     usuario.imagen = null;
 
     //funcion save para interactuar con la BD
