@@ -1,16 +1,12 @@
 <div id="container">
     <form #formularioRegistro="ngForm" (ngSubmit)="registrarUsuario()">
-        <input type="text" placeholder="Nombre" name="nombre"
-        #nombre="ngModel" [(ngModel)]="usuarioRegistro.nombre"/>
+        <input type="text" placeholder="Nombre" name="nombre" #nombre="ngModel" [(ngModel)]="usuarioRegistro.nombre" />
         <br>
-        <input type="text" placeholder="apellido" name="apellido"
-        #apellido="ngModel" [(ngModel)]="usuarioRegistro.apellido" >
+        <input type="text" placeholder="Apellido" name="apellido" #apellido="ngModel" [(ngModel)]="usuarioRegistro.apellido">
         <br>
-        <input type="text" placeholder="correo" name="correo"
-        #correo="ngModel" [(ngModel)]="usuarioRegistro.correo" />
+        <input type="text" placeholder="Correo" name="correo" #correo="ngModel" [(ngModel)]="usuarioRegistro.correo" />
         <br>
-        <input type="password" placeholder="contraseña" name="contrasena"
-        #contrasena="ngModel" [(ngModel)]="usuarioRegistro.contrasena">
+        <input type="password" placeholder="Contraseña" name="contrasena" #contrasena="ngModel" [(ngModel)]="usuarioRegistro.contrasena">
         <br>
         <button type="submit">Registrate</button>
     </form>
