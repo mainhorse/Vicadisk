@@ -96,6 +96,7 @@ function subirImg(req, res){
 
     // validar si efectivamente se esta enviando un archivo
     if(req.files){
+        console.log(req.files)
         // Vamos a ir analizando la ruta del archivo, el nombre y la extencion
         // C:\\usuarios\descargas\imagen.png
         var rutaArchivo = req.files.imagen.path;
@@ -143,7 +144,7 @@ function subirImg(req, res){
         }
 
     } else {
-        res.status(200).send({message : "No has subido una imagen..."});
+        res.status(200).send({message : "No has subido una cancion..."});
     }
 }
 

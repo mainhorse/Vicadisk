@@ -1,11 +1,12 @@
 <!-- Traer la imagen de perfil de usuario
-       
+       <img id="imgUsuario" />
       <img id='imgUsuario'/> 
     // segunda opcion
       <img id="imgUsuario" src="{{ rutaImagen }}"
     -->
 <div id="container">
-<img id="imgUsuario" />  
+<img id="imgUsuario" src="{{ url + 'obtenerImagen/' + identidad.imagen}}" />
+  
 <span> Bienvenid@ {{ identidad.nombre }}</span>
 <button routerLink="/" id="cerrar">cerrar</button>
 

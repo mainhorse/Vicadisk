@@ -23,8 +23,6 @@ export class datosComponent implements OnInit{
     ){
         this.url = usuarioService.url;
     }
-
-     
         ngOnInit(): void{
             this.usuarioActualizar = JSON.parse(localStorage.getItem('sesion'));
             this.identidad = this.usuarioService.obtenerNombreUsuario();
