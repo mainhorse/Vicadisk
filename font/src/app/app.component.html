@@ -1,16 +1,17 @@
 
-<div *ngIf="pagina == '' || pagina == undefined " id="inicio">
+<div *ngIf="pagina == '' || pagina == undefined " id="inicio"> 
     <app-banerInicio></app-banerInicio> 
     <app-ingRegistro></app-ingRegistro>
     <router-outlet></router-outlet> 
 </div>
+
  
 <div *ngIf="pagina == 'usuario'" id="usuario">
     <app-perfilUsuario></app-perfilUsuario>
     <router-outlet></router-outlet>
     <app-anos></app-anos>
     <app-mainUser></app-mainUser>
-    <app-footer></app-footer>
+    <app-footer></app-footer> 
 </div>
 
 <div *ngIf="pagina == 'administrador'" id="usuario">

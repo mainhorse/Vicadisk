@@ -89,7 +89,6 @@
             ],
             "styles": [
               "src/styles.css"
-             
             ],
             "scripts": []
           }
@@ -120,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "font"
+    }
+  },
+  "defaultProject": "font",
+  "cli": {
+    "analytics": false
+  }
 }

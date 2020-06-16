@@ -7,5 +7,6 @@ import { Component } from '@angular/core';
 })
 
 export class footerComponent {
-    redes = ['assets/img/facebook.png','assets/img/twiter.png','assets/img/instagram.png','assets/img/youtube.png']
+    redes = ['assets/img/facebook.png','assets/img/twiter.png','assets/img/instagram.png','assets/img/youtube.png'];
+    imagen1 = ['assets/img/Bog.png'];
 }
