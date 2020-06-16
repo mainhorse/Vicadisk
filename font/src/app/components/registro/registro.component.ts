@@ -52,7 +52,7 @@ export class registroComponent{
             error =>{
                 var errorMensaje = <any>error;
                 if(errorMensaje != null){
-                    //console.log(error);
+                    alert("Llene los datos por favor");
                 }
             }
         )
