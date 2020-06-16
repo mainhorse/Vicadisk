@@ -56,10 +56,8 @@ export class registroComponent{
                         imageWidth: 400,
                         imageHeight: 200,
                         imageAlt: 'Custom image', 
-                        confirmButtonColor: '#F76363',
-                        backdrop: ` rgba(0,0,0,0.5)
-                                    left top
-                                    no-repeat`
+                        confirmButtonColor: '#F76363'
+
                     }).finally
 
                     // cierre sweetAlert

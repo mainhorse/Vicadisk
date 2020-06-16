@@ -4,7 +4,7 @@
     margin-top: 10%;
     margin-left: 15%;
     border-radius:10px;
-    float: left;
+    position: absolute;
 }
 
 @media only screen and (max-width: 830px) {
