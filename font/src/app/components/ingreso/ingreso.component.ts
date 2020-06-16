@@ -2,6 +2,7 @@ import { Component } from "@angular/core";
 // modelo que se hizo para validar correo y contraseña
 import { Usuario } from "../../modelo/usuario";
 // importamos el servicio
+import { Cancion } from "../../modelo/Cancion";
 import { UsuarioService } from '../../service/usuario.service';
 // Importar el manejador de rutas
 import { Router, ActivatedRoute, Params, RouterLink } from '@angular/router';
@@ -18,11 +19,13 @@ export class ingresoComponent{
 
     public usuarioIngreso : Usuario;
     public identidad;
+    public cancion : Cancion;
 
     constructor(private usuarioServicio : UsuarioService,
         private _router : Router
         ){
       this.usuarioIngreso = new Usuario('','','','','','usuario',''); 
+      this.cancion = new Cancion('','','','',[],[]);
     }
 
     ngOnInit(): void{
@@ -35,7 +38,8 @@ export class ingresoComponent{
             let validar = response.usuario;
             this.usuarioIngreso = validar;
             if(!this.usuarioIngreso){
-                alert("Datos invalidos");   
+                alert("Datos invalidos"); 
+                this.usuarioIngreso = new Usuario('','','','','','usuario','');  
             } else{
                                 
                     let datosUsuario = new Usuario(
@@ -50,16 +54,18 @@ export class ingresoComponent{
                         // creamos el objeto localStorage  
                         localStorage.setItem('sesion',JSON.stringify(datosUsuario));
                         let dir = JSON.parse(localStorage.getItem('sesion'));
-                        if(dir.rol == 'usuario'){
-                            localStorage.setItem('pagina','usuario'); 
-                        } else {
+                        if(dir.rol == "administrador"){
+                            console.log(dir.rol);
                             localStorage.setItem('pagina','administrador'); 
+                            localStorage.setItem('album', JSON.stringify(this.cancion)); 
+                        } else {
+                            localStorage.setItem('pagina','usuario'); 
                         }                                               
                         // Consumir el servidor
                         this.identidad = this.usuarioServicio.obtenerNombreUsuario();
                         this.usuarioIngreso = new Usuario('','','','','','usuario','');
-                        this._router.navigate(['']);                       
-                        window.location.reload();     
+                                            
+                        window.location.reload();    
             }
         },
         error =>{

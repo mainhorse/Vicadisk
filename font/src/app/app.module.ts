@@ -23,6 +23,7 @@ import { mainUserComponent } from './components/mainUser/mainUser.component';
 import { footerComponent } from './components/footer/footer.component';
 import { mainSudoComponent } from './components/mainSudo/mainSudo.component';
 import { SliderComponent } from './components/slider/slider.component';
+import { CancionService } from './service/cancion.service';
 
 
 
@@ -48,7 +49,7 @@ import { SliderComponent } from './components/slider/slider.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [UsuarioService],
+  providers: [UsuarioService, CancionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

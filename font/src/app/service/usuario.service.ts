@@ -21,8 +21,6 @@ export class UsuarioService {
   //----------------------------------------- 
   // Declarar el mètodo del servicio registro
   registro(usuarioNuevo){
-    console.log(usuarioNuevo);
-    console.log(usuarioNuevo)
     let params = JSON.stringify(usuarioNuevo);
     let options = {
       headers : new HttpHeaders({'Content-Type' : 'application/json'})
