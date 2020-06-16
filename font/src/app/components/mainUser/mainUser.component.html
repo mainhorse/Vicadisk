@@ -1,35 +1,205 @@
-<div id="container">
-    <aside id="izquierdo">
-        <div id="caratula">
-            <img [src] = caratula alt="caratula libro">
-        </div>
-        <div id="resultado">
-            <div id="canciones">
-                <header id="busHeader">
-                    <img [src] = logo_busqueda alt="logo de busqueda" id="logoBusqueda">
-                    <div id="titBusqueda">
-                        Resultados
-                    </div>
-                </header>
-            </div>
-        </div>
-    </aside>
-    <aside id="derecho">
-        <div id="mp3">  
-            <div id="sonido">
-            </div>
-            <div id="botReproduccion">
-                <button>Ret</button>
-                <button>play</button>
-                <button>paus</button>
-                <button>adel</button>
-            </div>
-        </div>
-        <div id="cancionAlbum">
-            <img [src]= cassete alt="casset" id="casset">
-            <div id="tituloCancion"> Reproducir</div>
-            <div id="contenido">
-            </div>
-        </div>
-    </aside>
-</div>
+<section class="noticias">
+  <article class="main_content">
+    <div class="cards-s-big"></div>
+    <section class="s-categories-big" id="grafica">
+      <h2 class="s-titulo">Mi Musica</h2>
+      <div class="s-container-big">
+
+          <div class="full-card-big-1">
+            <aside id="izquierdo">
+              <div id="caratula">
+                  <div class="slider">
+                      <ul>
+                          <li *ngFor="let img of imagen1">
+                              <img [src]="img" class="imagenslider" />
+                          
+                          </li>
+              
+                          <li *ngFor="let img of imagen1">
+                              <img [src]="img" class="imagenslider" />
+                            
+                          </li>
+              
+                          <li *ngFor="let img of imagen1">
+                              <img [src]="img" class="imagenslider" />
+                              
+                          </li>
+                          <li *ngFor="let img of imagen1">
+                              <img [src]="img" class="imagenslider" />
+                            
+                          </li>
+                      </ul>
+                  </div>
+
+                  
+              </div>
+              <div id="resultado">
+                  <div id="canciones">
+                      <header id="busHeader">
+                          <img [src] = logo_busqueda alt="logo de busqueda" id="logoBusqueda">
+                          <div id="titBusqueda">
+                              Resultados
+                          </div>
+                      </header>
+                      <section class="s-categories" id="grafica">
+                          <h2 class="s-titulo">Albumes</h2>
+                          <div class="s-container">
+                            <div class="full-card">
+                              <div class="card transition">
+                                <div class="card_circle transition">
+                                  <div *ngFor="let img of imagen1">
+                                    <img [src]="img" class="logo" /></div>
+                                </div>
+                                <h2 class="transition">Rolling Stones</h2>
+                                <p>8888</p>
+                                <div class="cta-container transition"><a href="#" class="cta">Click Aqui</a></div>
+                              </div>
+                            </div>
+                            
+                            <div class="full-card">
+                              <div class="card transition">
+                                <div class="card_circle transition">
+                                  <div *ngFor="let img of imagen1">
+                                    <img [src]="img" class="logo" /></div>
+                                </div>
+                                <h2 class="transition">Rolling Stones</h2>
+                                <p>8888</p>
+                                <div class="cta-container transition"><a href="#" class="cta">Click Aqui</a></div>
+                              </div>
+                            </div>
+                  
+                            
+                            <div class="full-card">
+                              <div class="card transition">
+                                <div class="card_circle transition">
+                                  <div *ngFor="let img of imagen1">
+                                    <img [src]="img" class="logo" /></div>
+                                </div>
+                                <h2 class="transition">Rolling Stones</h2>
+                                <p>8888</p>
+                                <div class="cta-container transition"><a href="#" class="cta">Click Aqui</a></div>
+                              </div>
+                            </div>
+                    
+                          </div>
+                        </section>
+                  </div>
+              </div>
+          </aside>
+          </div>
+      
+        
+          <div class="full-card-big">    
+            <aside id="derecho">
+              <div id="mp3">  
+                  <div id="sonido">
+                  </div>
+                  <div class="contenedor-barra">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                    <div class="line4"></div>
+                    <div class="line5"></div>
+                    <div class="line6"></div>
+                    <div class="line7"></div>
+                    <div class="line8"></div>
+                    <div class="line9"></div>
+                    <div class="line10"></div>
+                    <div class="line11"></div>
+                    <div class="line12"></div>
+                    <div class="line13"></div>
+                    <div class="line14"></div>
+                    <div class="line15"></div>
+                    <div class="line16"></div>
+                    <div class="line17"></div>
+                </div>
+                  <div><audio controls>
+                    <source src="horse.ogg" type="audio/ogg">
+                    <source src="horse.mp3" type="audio/mpeg">
+                  </audio>
+                  </div>
+           <!--  
+                  <div id="botReproduccion">
+                      <button>Ret</button>
+                      <button>play</button>
+                      <button>paus</button>
+                      <button>adel</button>
+                  </div>-->
+           
+                  <!-- Lineas Del FLow  -->
+
+                  
+            
+              </div>
+              
+             
+          </aside>
+          </div>
+        
+          <div class="full-card-big-1">
+            <aside id="izquierdo">
+              <div id="resultado">
+                  <div id="canciones">
+                      <header id="busHeader">
+                        <img [src]= cassete alt="casset" id="casset">
+                          <div id="titBusqueda">
+                              Resultados
+                          </div>
+                      </header>
+                      <section class="s-categories" id="grafica">
+                          <h2 class="s-titulo">Canciones</h2>
+                          <div class="s-container">
+                            <div class="full-card">
+                              <div class="card transition">
+                                <div class="card_circle transition">
+                                  <div *ngFor="let img of imagen1">
+                                    <img [src]="img" class="logo" /></div>
+                                </div>
+                                <h2 class="transition">Rolling Stones</h2>
+                                <p>8888</p>
+                                <div class="cta-container transition"><a href="#" class="cta">Click Aqui</a></div>
+                              </div>
+                            </div>
+                            
+                            <div class="full-card">
+                              <div class="card transition">
+                                <div class="card_circle transition">
+                                  <div *ngFor="let img of imagen1">
+                                    <img [src]="img" class="logo" /></div>
+                                </div>
+                                <h2 class="transition">Rolling Stones</h2>
+                                <p>8888</p>
+                                <div class="cta-container transition"><a href="#" class="cta">Click Aqui</a></div>
+                              </div>
+                            </div>
+                  
+                            
+                            <div class="full-card">
+                              <div class="card transition">
+                                <div class="card_circle transition">
+                                  <div *ngFor="let img of imagen1">
+                                    <img [src]="img" class="logo" /></div>
+                                </div>
+                                <h2 class="transition">Rolling Stones</h2>
+                                <p>8888</p>
+                                <div class="cta-container transition"><a href="#" class="cta">Click Aqui</a></div>
+                              </div>
+                            </div>
+                    
+                          </div>
+                        </section>
+                  </div>
+              </div>
+          </aside>
+          </div>
+      </div>
+    </section>
+  </article>
+</section>
+
+
+
+
+
+
+

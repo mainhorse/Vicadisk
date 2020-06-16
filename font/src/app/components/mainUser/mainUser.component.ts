@@ -11,4 +11,5 @@ export class mainUserComponent{
     caratula = 'assets/img/acetato.png';
     logo_busqueda = 'assets/img/walkman.png';
     cassete = 'assets/img/casete.png';
+    imagen1 = ['assets/img/Roll.jpg'];
 }

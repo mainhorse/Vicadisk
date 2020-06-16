@@ -54,6 +54,7 @@ export class ingresoComponent{
                         // creamos el objeto localStorage  
                         localStorage.setItem('sesion',JSON.stringify(datosUsuario));
                         let dir = JSON.parse(localStorage.getItem('sesion'));
+
                         if(dir.rol == "administrador"){
                             console.log(dir.rol);
                             localStorage.setItem('pagina','administrador'); 
