@@ -1,12 +1,12 @@
 const Usuario = require('../modelo/usuario');
 // Importar el módulo file System de node 
-const fs= require('fs');
+const fs = require('fs');
 // Importar el modulo path
 const path = require('path');
 
 
 // funcion de registro usuario
-function registrarUsuario(req, res){
+function registrarUsuario(req, res) {
     var usuario = new Usuario();
     var parametros = req.body;
 
@@ -42,25 +42,25 @@ function registrarUsuario(req, res){
 }
 
 //Funcion de login
-function login(req, res){
+function login(req, res) {
     var parametros = req.body;
     var correoUsuario = parametros.correo;
     var contraUsuario = parametros.contrasena;
 
-    
-    Usuario.findOne({correo: correoUsuario}, (err, usuarioLogueado)=> {
-        if(err){
-            res.status(500).send({message : "Error en el servidor"});
-        } else{
-            if(!usuarioLogueado){
-                res.status(200).send({message: "datos incorrectos"});
+
+    Usuario.findOne({ correo: correoUsuario }, (err, usuarioLogueado) => {
+        if (err) {
+            res.status(500).send({ message: "Error en el servidor" });
+        } else {
+            if (!usuarioLogueado) {
+                res.status(200).send({ message: "datos incorrectos" });
             } else {
-                if(usuarioLogueado.contrasena != contraUsuario){
-                    res.status(200).send({message : "datos incorrectos"})
+                if (usuarioLogueado.contrasena != contraUsuario) {
+                    res.status(200).send({ message: "datos incorrectos" })
                 } else {
                     res.status(200).send({
                         message: "bienvenido",
-                        usuario : usuarioLogueado
+                        usuario: usuarioLogueado
                     });
                 }
             }
@@ -69,17 +69,17 @@ function login(req, res){
 }
 
 //Funcion de actualizar Usuario
-function actualizarUsuario(req, res){
+function actualizarUsuario(req, res) {
     // localhost:3000/api/editar/:id
     var usuarioId = req.params.id;
     var nuevosDatosUsuario = req.body;
 
-    Usuario.findByIdAndUpdate(usuarioId, nuevosDatosUsuario, (err, usuarioActualizado)=>{
-        if(err){
-            res.status(500).send({message : "Error en el servidor"});
+    Usuario.findByIdAndUpdate(usuarioId, nuevosDatosUsuario, (err, usuarioActualizado) => {
+        if (err) {
+            res.status(500).send({ message: "Error en el servidor" });
         } else {
-            if(!usuarioActualizado){
-                res.status(200).send({message : "No fue posible actualizar tus datos"});
+            if (!usuarioActualizado) {
+                res.status(200).send({ message: "No fue posible actualizar tus datos" });
             } else {
                 res.status(200).send({
                     message: "Usuario Actualizado",
@@ -94,13 +94,14 @@ function actualizarUsuario(req, res){
 
 
 //Funcionsubir imagen
-function subirImg(req, res){
+function subirImg(req, res) {
     var usuarioId = req.params.id;
     var nombreArchivo = "No has subido ninguna imagen...";
 
     // validar si efectivamente se esta enviando un archivo
-    if(req.files){
-        console.log(req.files)
+
+    if (req.files) {
+
         // Vamos a ir analizando la ruta del archivo, el nombre y la extencion
         // C:\\usuarios\descargas\imagen.png
         var rutaArchivo = req.files.imagen.path;
@@ -110,7 +111,7 @@ function subirImg(req, res){
         // Esto nos generara un arreglo de datos
         var partirArchivo = rutaArchivo.split('\\');
         console.log(`partir Archivo: ${partirArchivo}`);
-    
+
         // acceder a la posicion que contiene el nombre del archivo
         var nombreArchivo = partirArchivo[2];
         console.log(`posicion dato : ${nombreArchivo}`);
@@ -124,14 +125,14 @@ function subirImg(req, res){
         console.log(`Extension Archivo: ${extensionArchivo}`);
 
         // Validar si el formato del archivo es aceptado
-        if(extensionArchivo == "png" || extensionArchivo == "jpg"){
+        if (extensionArchivo == "png" || extensionArchivo == "jpg") {
             // Actualizar del usuario el campo imagen
-            Usuario.findByIdAndUpdate(usuarioId, {imagen : nombreArchivo}, (err, usuarioConImagen)=>{
-                if(err){
-                    res.status(500).send({message : "Error en el servidor"});
+            Usuario.findByIdAndUpdate(usuarioId, { imagen: nombreArchivo }, (err, usuarioConImagen) => {
+                if (err) {
+                    res.status(500).send({ message: "Error en el servidor" });
                 } else {
-                    if(!usuarioConImagen){
-                        res.status(200).send({message : "No fue posible subir la imagen"});
+                    if (!usuarioConImagen) {
+                        res.status(200).send({ message: "No fue posible subir la imagen" });
                     } else {
                         res.status(200).send({
                             message: "Imagen Anexada",
@@ -144,28 +145,31 @@ function subirImg(req, res){
 
         } else {
             // formato no valido
-            res.status(200).send({message: "Formato invalido"});
+            res.status(200).send({ message: "Formato invalido" });
         }
 
     } else {
+
+
         res.status(200).send({message : "No has subido una cancion..."});
+
     }
 }
 
-function mostrarArchivo(req, res){
+function mostrarArchivo(req, res) {
     // pedir el archivo que queremos mostrar
 
     var archivo = req.params.imageFile;
     // Ubicacion del archivo
-    var ruta = './archivos/usuarios/' +archivo;
+    var ruta = './archivos/usuarios/' + archivo;
 
     // validar si existe o no
     // fs.exists('la ruta del archivo'. (exiate)=>{})
-    fs.exists(ruta,(exist)=>{
-        if(exist){
+    fs.exists(ruta, (exist) => {
+        if (exist) {
             res.sendFile(path.resolve(ruta));
-        } else{
-            res.status(200).send({message: "imagen no encontrada"});
+        } else {
+            res.status(200).send({ message: "imagen no encontrada" });
         }
     })
 }

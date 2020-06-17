@@ -13,6 +13,8 @@ export class mainUserComponent{
     caratula = 'assets/img/acetato.png';
     logo_busqueda = 'assets/img/walkman.png';
     cassete = 'assets/img/casete.png';
+    imagen1 = ['assets/img/Roll.jpg'];
+  
     public url: String;   
    
     canciones = JSON.parse(localStorage.getItem('album')); 
@@ -42,4 +44,6 @@ export class mainUserComponent{
         localStorage.setItem('listasReproduccion', JSON.stringify(arreglo));
         window.location.reload();             
     }
+    
+
 }

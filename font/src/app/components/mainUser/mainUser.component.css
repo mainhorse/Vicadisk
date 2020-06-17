@@ -1,58 +1,315 @@
-#container{
-    background-color: #C6C6C6;
-    width: 90%;
-    height: 80%;
-    margin-left: 5%;
-    float: left;
+
+/* CONTAINER*/
+
+.s-titulo{
+  font: 700 3rem sans-serif;
+  margin-top: 40px 40px;
+  color: snow;
+  text-shadow: -3px -3px 5px  grey ;
+  font-size: 20px;
+}  
+.cards-s-big{
+    margin:auto;
+    text-align: center;
+}
+
+.main_content{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background: linear-gradient(90deg, #769cb5 10%,#AF1012 90%); 
+    border-radius: 2px;
+}
+
+.s-categories-big{
+    width: 100%;
+    margin-top: 5px;
+
+}
+
+.s-container-big{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
+/* .llamar la clase,  dejar espacio, agregar subclases  */
+.s-container-big .full-card-big{
+   
+    border-radius: 1px;
+    overflow: hidden;
+    text-align: center;
+    transition: all 0.25s;
+    background-color: snow;
+ 
+}
+
+
+
+.s-container-big .full-card-big-1{
+   
+    border-radius: 1px;
+    overflow: hidden;
+    text-align: center;
+    transition: all 0.25s;
+    background-color: snow;
+    width: 35%;
+ 
+}
+
+
+
+/* End Categories */
+/* new Cards */
+
+.card-big {
+    background-color: #fff;
+    bottom: 0;
+    box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.3);
+    height: 300px;
+    left: 0;
+    margin: 10px;
+    overflow: hidden;
+    position: relative;
+    right: 0;
+    top: 0;
+    width: 350px;
+    height: 500px;
+}
+/* FIN CONTAINER */
+
+/* SLIDER */
+
+.slider {
+	width: 39%;
+	margin: auto;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+.slider ul {
+	display: flex;
+	padding: 0;
+    width: 400%;
+	animation: cambio 20s infinite alternate linear;
+}
+
+.slider li {
+    width: 100%;
+    list-style: none;
+ 
+}
+
+.slider img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+@keyframes cambio {
+	0% {margin-left: 0;}
+	20% {margin-left: 0;}
+	
+	25% {margin-left: -100%;}
+	45% {margin-left: -100%;}
+	
+	50% {margin-left: -200%;}
+	70% {margin-left: -200%;}
+	
+	75% {margin-left: -300%;}
+	100% {margin-left: -300%;}
+}
+
+
+
+
+/* ALBUM DE MUSICA  */
+
+ /* Cartas Album  */
+.transition { transition: .3s cubic-bezier(.3, 0, 0, 1.3) }
+
+.s-titulo{
+  font: 700 3rem sans-serif;
+  margin-top: 40px 40px;
+  color: snow;
+  text-shadow: -3px -3px 5px  grey ;
+  font-size: 30px;
+}  
+
+.s-categories{
+    width: 100%;
+    margin-top: 5px;
+}
+
+.s-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
+
+.s-container .full-card{
+
+    overflow: hidden;
+    text-align: center;
+    transition: all 0.25s;
+    background-color: snow;
+ 
+}
+
+
+.card-music {
+    background-color: #fff;
+    bottom: 0;
+    box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.3);
+    height: 300px;
+    left: 0;
+    overflow: hidden;
+    position: relative;
+    right: 0;
+    top: 0;
+    width: 292px;
+    height: 500px;
+}
+
+
+
+.card {
+    background-color: #fff;
+    bottom: 0;
+    box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.3);
+    height: 300px;
+    left: 0;
+    margin: 5px;
+    overflow: hidden;
+    position: relative;
+    right: 0;
+    top: 0;
+    width: 134px;
+    height: 145px;
+}
+
+.card:hover {
+    height: 210px;
+   
+}
+.card:hover .cta-container {
+    display: inline;
+   
+}
+.card:hover .card_circle {
+    background-size: cover;
+    border-radius: 0;
+   
+}
+.card:hover h2 {
+    background:#AF1012;
+    color: #fff;
+    padding: 5px;
+}
+.card:hover h2 small { color: #fff }
+
+.card:hover img {height:120px}
+.card_circle {
+    background: no-repeat center bottom;
+    background-color: #AF1012;
+    background-size: cover;
+    border-radius: 50%;
+    height: 124px;
+    position: relative;
+}
+.logo{
+    height: 100px;
+    width: 100px;
+}
+
+h2 {
+    color:#AF1012;
+    font-family:sans-serif;
+    font-size: 10px;
+    font-weight: 200;
+    text-align: center;
+    width: 100%;
+    z-index: 9999;
+}
+p {
+    color: rgba(0,0,0,.6);
+    font-family:sans-serif;
+    font-size: 10px;
+    font-weight: normal;
+  
+    position: relative;
+    text-align: center;
+    z-index: 9999;
+}
+.cta-container {
+    display: none;
+    position: relative;
+    text-align: center;
+    width: 100%;
+    z-index: 9999;
+}
+.cta {
+    -moz-border-radius: 2px;
+    -moz-transition: 0.2s ease-out;
+    -ms-transition: 0.2s ease-out;
+    -o-transition: 0.2s ease-out;
+    -webkit-border-radius: 2px;
+    -webkit-transition: 0.2s ease-out;
+    background-clip: padding-box;
+    border: 2px solid #AF1012;
+    border-radius: 2px;
+    color: #AF1012;
+    display: inline-block;
+    font-family:sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    
+    letter-spacing: 0.5px;
+
+
+    padding: 0 2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.2s ease-out;
+}
+.cta:hover {
+    background-color: #AF1012;
+    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    color: #fff;
+    -moz-box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 #izquierdo{
-    background-color:#C75133;
-    width: 40%;
-    height: 90%;
-    margin-top:2%;
-    margin-left: 5%;
-    margin-right: 5%;
     border-radius: 10px;
-    float: left;
+
 }
 
 #caratula{
-    background-color: #C75133;
-    width: 40%;
-    height: 25%;
-    margin-top: 5%;
-    margin-left: 30%;
-    margin-right: 30%;
     border-radius: 10px;
-    float: left;
+    width: 100%;
+
 }
 
 img{
-    width: 100%;
-    height: 100%;
+    width: 30%;
+    height: 30%;
 }
 #resultado{
-    background-color: #C75133;
-    width: 60%;
-    height: 65%;
-    margin-top: 2%;
-    margin-left: 20%;
-    margin-right: 20%;
     border-radius: 10px;
-    float: left;
+
+   
 }
 
 #canciones{
     background-color: white;
-    width: 96%;
-    height: 96%;
-    margin-top: 2%;
-    margin-left: 2%;
-    margin-right: 2%;
     border-radius: 10px;
-    overflow: auto;
-    float: left;
+    width: 100%;
+    height: 100%;
+
+    
 }
 
 #canciones::-webkit-scrollbar {
@@ -71,12 +328,13 @@ img{
     height:20%;
     margin-top: 2%;
     float: left;
+
 }
 
 #logoBusqueda{
     width: 30%;
     height: 100%;
-    float: left;
+  
 }
 
 #logoBusqueda:hover{
@@ -84,12 +342,8 @@ img{
 }
 
 #titBusqueda{
-    width: 60%;
-    height: 40%;
-    margin-top: 12%;
-    margin-left: 5%;
-    font-size: xx-large;
-    float: left;
+    font-size: 30px;
+ 
 }
 
  .caratulas{
@@ -122,41 +376,38 @@ p{
 }
 
 #derecho{
-    background-color: #C75133;
-    width: 45%;
-    height: 90%;
-    margin-top: 2%;
     border-radius: 10px;
-    float: left;
+    width: 100%;
+    height: 100%;
+    
+   
 }
 
 #mp3{
     background-image: url('../../../assets/img/fondo_reproduccion.png');
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    width: 45%;
-    height: 80%;
-    margin-left: 3%;
-    margin-top: 10%;
-    overflow:auto;
-    float: left;
+    width: 100%;
+    overflow:hidden;
+    
 }
 #sonido{
         width: 100%;
-        height: 82%;
-        float: left;
+        height: 95%;
+
+
 }
 #botReproduccion{
     width: 100%;
     height: 18%;
-    float: left;
+
 }
  button{
      width: 20%;
      height: 60%;
-     margin-left: 4%;
+ 
      border-radius: 15%;
-     float: left;
+
  }
 #cancionAlbum{
     background-color: white;
@@ -164,7 +415,7 @@ p{
     height: 80%;
     margin-left: 4%;
     margin-top: 10%;
-    float: left;
+   
 }
 
 #casset{
@@ -172,7 +423,7 @@ p{
     height: 12%;
     margin-top: 5%;
     margin-left: 10%;
-    float: left;
+
 }
 #casset:hover{
     transform: rotate(-15deg);
@@ -182,7 +433,7 @@ p{
     height: 12%;
     margin-top: 12%;
     font-size: xx-large;
-    float: left;
+
 }
 
 #contenido{
@@ -193,6 +444,7 @@ p{
     border: 2px solid rgba(0, 0, 0, 0.5);
     overflow: auto;
     float: left;
+
 }
 
 #cardCanciones{
@@ -216,3 +468,312 @@ p{
 	background-image: linear-gradient(to right,white,grey);
 	border-radius: 5px;
 }
+/* lineas del flow */
+@keyframes acercar {
+    10%{
+        transform: scale(0.3);
+        background-color: black;
+    }
+    50%{
+        transform: scale(0.3);
+      }
+    
+    100%{
+        transform: scale(1.0);
+        background-color: white;
+    }
+}
+.contenedor-barra{
+    width: 90%;
+    height: 57%;
+    display: flex;
+    transform: rotate(180deg);
+    margin-top: 45%;  
+}
+
+.line1{
+    width: 10px;
+    height: 100px;
+    background-color: white;
+    animation: uno .9s infinite ease-out;
+    margin-right: 3px;
+    
+
+}
+@keyframes uno{
+    50%{
+        height: 30px;
+    }
+    
+    100%{
+        height: 200px;
+    }
+    
+}
+
+.line2{
+    width: 10px;
+    height:100px;
+    background-color: white;
+    animation: dos .5s infinite ease-out;
+    animation-duration: 1s;
+    margin-right: 3px;
+    
+}
+@keyframes dos{
+    50%{
+         height: 20px;
+    }
+    
+    100%{
+         height: 200px;
+    }
+}
+.line3{
+    width: 10px;
+    height: 100px;
+    background-color: white;
+    animation: tres .9s infinite ease-out;
+    margin-right: 3px;
+}
+@keyframes tres{
+    50%{
+         height: 0px;
+    }
+    
+    100%{
+         height: 180px;
+    }
+}
+
+.line4{
+   width: 10px;
+   height: 100px;
+   background-color: white;
+   animation: cuatro .9s infinite ease-out;
+   margin-right: 3px;
+}
+@keyframes cuatro{
+   50%{
+        height: 90px;
+   }
+   
+   100%{
+        height: 150px;
+   }
+}
+.line5{
+   width: 10px;	
+   height: 100px;
+   background-color: white;
+   animation: cinco .9s infinite ease-out;
+   margin-right: 3px;
+}
+@keyframes cinco{
+   50%{
+        height: 20px;
+   }
+   
+   100%{
+        height: 130px;
+   }
+} 
+line6{
+   width: 10px;
+   height: 100px;
+   background-color: white;
+   animation: seis .5s infinite ease-out;
+}
+@keyframes seis{
+   50%{
+        height: 200px;
+   }
+   
+   100%{
+        height: 250px;
+   }
+}
+
+.line8{
+   width: 10px;
+   height: 100px;
+   background-color: white;
+   animation: ocho .9s infinite ease-out;
+   margin-right: 3px;
+}
+@keyframes ocho{
+   50%{
+        height: 10px;
+   }
+   
+   100%{
+        height: 150px;
+   }
+}
+
+.line9{
+   width: 10px;
+   height: 100px;
+   background-color: white;
+   animation: nueve .9s infinite ease-out;
+   margin-right: 3px;
+}
+
+@keyframes nueve{
+   50%{
+        height: 60px;
+   }
+   
+   100%{
+        height: 100px;
+   }
+}
+
+.line10{
+   width: 10px;
+   height: 100px;
+   background-color: white;
+   animation: diez .9s infinite ease-out;
+   margin-right: 3px;
+}
+
+@keyframes diez{
+   50%{
+        height: 15px;
+   }
+   
+   100%{
+        height: 100px;
+   }
+}
+
+.line11{
+   width: 10px;
+   height: 100px;
+   background-color: white;
+   animation: once .9s infinite ease-out;
+   margin-right: 3px;
+}
+
+@keyframes once{
+   50%{
+        height: 50px;
+   }
+   
+   100%{
+        height: 100px;
+   }
+}
+
+.line12{
+   width: 10px;
+   height: 100px;
+   background-color: white;
+   animation: doce .9s infinite ease-out;
+   margin-right: 3px;
+}
+
+@keyframes doce{
+   50%{
+        height: 80px;
+   }
+   
+   100%{
+        height: 110px;
+   }
+}
+
+.line13{
+   width: 10px;
+   height: 100px;
+   background-color: white;
+   animation: trece .9s infinite ease-out;
+   margin-right: 3px;
+}
+
+@keyframes trece{
+   50%{
+        height: 140px;
+   }
+   
+   100%{
+        height: 10px;
+   }
+}
+
+.line14{
+   width: 10px;
+   height: 100px;
+   background-color:white;
+   animation: catorce .9s infinite ease-out;
+   margin-right: 3px;
+}
+
+@keyframes catorce{
+   50%{
+        height: 90px;
+   }
+   
+   100%{
+        height: 160px;
+   }
+}
+
+.line15{
+   width: 10px;
+   height: 100px;
+   background-color: white;
+   animation: quince .9s infinite ease-out;
+   margin-right: 3px;
+}
+
+@keyframes quince{
+   50%{
+        height: 130px;
+   }
+   
+   100%{
+        height: 100px;
+   }
+}
+
+.line16{
+   width: 10px;
+   height: 100px;
+   background-color: white;
+   animation: diezyseis .9s infinite ease-out;
+   margin-right: 3px;
+}
+
+@keyframes diezyseis{
+   50%{
+        height: 130px;
+   }
+   
+   100%{
+        height: 100px;
+   }
+}
+
+.line17{ 
+   width: 10px;
+   height: 100px;
+   background-color: white;
+   animation: diezisiete .9s infinite ease-out;
+   margin-right: 3px;
+}
+
+@keyframes diezisiete{
+   50%{
+        height: 150px;
+   }
+   
+   100%{
+        height: 150px;
+   }
+}
+
+
+
+
+/* End Lineas del Flow  */
