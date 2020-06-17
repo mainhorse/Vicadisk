@@ -127,9 +127,6 @@
 	100% {margin-left: -300%;}
 }
 
-
-
-
 /* ALBUM DE MUSICA  */
 
  /* Cartas Album  */
@@ -305,30 +302,26 @@ img{
 }
 #resultado{
     border-radius: 10px;
-
-   
 }
 
-#canciones{
+#canciones {
     background-color: white;
     border-radius: 10px;
     width: 100%;
     height: 100%;
-
-    
 }
 
 #canciones::-webkit-scrollbar {
-	width: 15px;
-	border-radius: 10px;	
+    width: 15px;
+    border-radius: 10px;
 }
 
 #canciones::-webkit-scrollbar-thumb {
-	background-image: linear-gradient(to right,white,grey);
-	border-radius: 5px;
+    background-image: linear-gradient(to right, white, grey);
+    border-radius: 5px;
 }
 
-#busHeader{
+#busHeader {
     background-color: transparent;
     width: 100%;
     height:20%;
@@ -337,19 +330,17 @@ img{
 
 }
 
-#logoBusqueda{
+#logoBusqueda {
     width: 30%;
     height: 100%;
-  
 }
 
-#logoBusqueda:hover{
+#logoBusqueda:hover {
     transform: rotate(15deg);
 }
 
 #titBusqueda{
     font-size: 30px;
- 
 }
 
  .caratulas{
@@ -368,11 +359,13 @@ img{
     border-radius: 10px;
     float: left;
 }
+
 .listasRep{
     background-color: transparent;
     width: 30%;
     height: 100%;
 }
+
 p{
     width: 60%;
     height: 10%;
@@ -385,35 +378,30 @@ p{
     border-radius: 10px;
     width: 100%;
     height: 100%;
-    
-   
 }
 
-#mp3{
+#mp3 {
     background-image: url('../../../assets/img/fondo_reproduccion.png');
     background-repeat: no-repeat;
     background-size: 100% 100%;
     width: 100%;
-    overflow:hidden;
-    
+    overflow:hidden;    
 }
+  
 #sonido{
         width: 100%;
         height: 95%;
-
-
 }
-#botReproduccion{
+
+#botReproduccion {
     width: 100%;
     height: 18%;
-
 }
+  
  button{
      width: 20%;
      height: 60%;
- 
      border-radius: 15%;
-
  }
 #cancionAlbum{
     background-color: white;
@@ -421,26 +409,25 @@ p{
     height: 80%;
     margin-left: 4%;
     margin-top: 10%;
-   
 }
 
-#casset{
+#casset {
     width: 20%;
     height: 12%;
     margin-top: 5%;
     margin-left: 10%;
-
 }
-#casset:hover{
+
+#casset:hover {
     transform: rotate(-15deg);
 }
-#tituloCancion{
+
+#tituloCancion {
     width: 60%;
     height: 12%;
     margin-top: 12%;
     font-size: xx-large;
-
-}
+  }
 
 #contenido{
     background-color: #AC1212;
@@ -450,7 +437,6 @@ p{
     border: 2px solid rgba(0, 0, 0, 0.5);
     overflow: auto;
     float: left;
-
 }
 
 #cardCanciones{
@@ -466,14 +452,92 @@ p{
 }
 
 #contenido::-webkit-scrollbar {
-	width: 15px;
-	border-radius: 10px;	
+    width: 15px;
+    border-radius: 10px;
 }
 
 #contenido::-webkit-scrollbar-thumb {
-	background-image: linear-gradient(to right,white,grey);
-	border-radius: 5px;
+    background-image: linear-gradient(to right, white, grey);
+    border-radius: 5px;
 }
+
+
+/* lineas del flow */
+
+@keyframes acercar {
+    10% {
+        transform: scale(0.3);
+        background-color: black;
+    }
+    50% {
+        transform: scale(0.3);
+    }
+    100% {
+        transform: scale(1.0);
+        background-color: white;
+    }
+}
+
+.contenedor-barra {
+    width: 90%;
+    height: 57%;
+    display: flex;
+    transform: rotate(180deg);
+    margin-top: 45%;
+}
+
+.line1 {
+    width: 10px;
+    height: 100px;
+    background-color: white;
+    animation: uno .9s infinite ease-out;
+    margin-right: 3px;
+}
+
+@keyframes uno {
+    50% {
+        height: 30px;
+    }
+    100% {
+        height: 200px;
+    }
+}
+
+.line2 {
+    width: 10px;
+    height: 100px;
+    background-color: white;
+    animation: dos .5s infinite ease-out;
+    animation-duration: 1s;
+    margin-right: 3px;
+}
+
+@keyframes dos {
+    50% {
+        height: 20px;
+    }
+    100% {
+        height: 200px;
+    }
+}
+
+.line3 {
+    width: 10px;
+    height: 100px;
+    background-color: white;
+    animation: tres .9s infinite ease-out;
+    margin-right: 3px;
+}
+
+@keyframes tres {
+    50% {
+        height: 0px;
+    }
+    100% {
+        height: 180px;
+    }
+}
+
 /* lineas del flow */
 @keyframes acercar {
     10%{
@@ -584,7 +648,7 @@ p{
         height: 130px;
    }
 } 
-line6{
+.line6{
    width: 10px;
    height: 100px;
    background-color: white;
@@ -778,8 +842,4 @@ line6{
         height: 150px;
    }
 }
-
-
-
-
 /* End Lineas del Flow  */

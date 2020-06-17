@@ -1,12 +1,23 @@
-#container{
-    background-image: linear-gradient(to right, rgb(224, 223, 223),grey,rgba(0, 0, 0, 0.55));
+#container {
+    background-image: linear-gradient(to right, rgb(224, 223, 223), grey, rgba(0, 0, 0, 0.55));
     width: 80%;
-    height: 100%;
+    height: 850px;
     margin-left: 10%;
     margin-bottom: 3%;
     float: left;
+    margin-top: 40px;
 }
 
+@media (max-width: 1100px) {
+    #container {
+        width: 100%;
+        height: 800px;
+    }
+}
+
+
+
+  
 @media (max-width: 1100px){
     #container{
         width: 950px;
@@ -14,8 +25,8 @@
     }
 }
 
-#caratula{
-    background-color: rgba(199, 81, 51, 0.9);
+#caratula {
+    background-color: #fff;
     width: 20%;
     height: 25%;
     margin-top: 5%;
@@ -25,8 +36,8 @@
     float: left;
 }
 
-#formularios{
-    background-color: rgba(199, 81, 51, 0.9);
+#formularios {
+    background-color: #AF1012;
     width: 45%;
     height: 80%;
     margin-top: 5%;
@@ -36,7 +47,7 @@
     float: right;
 }
 
-#conForm{
+#conForm {
     background-color: white;
     width: 96%;
     height: 96%;
@@ -45,7 +56,7 @@
     border-radius: 10px;
 }
 
-#fondForm{
+#fondForm {
     background-image: url('../../../assets/img/fondo_usuario_busqueda.png');
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -58,32 +69,34 @@
 }
 
 #fondForm::-webkit-scrollbar {
-	width: 15px;
-	border-radius: 10px;	
+    width: 15px;
+    border-radius: 10px;
 }
 
 #fondForm::-webkit-scrollbar-thumb {
-	background-image: linear-gradient(to right,white,grey);
-	border-radius: 5px;
+    background-image: linear-gradient(to right, white, grey);
+    border-radius: 5px;
 }
-#guardar{
+
+#guardar {
     background-color: rgba(255, 255, 255, 0.7);
     width: 80%;
     height: 100%;
-    margin-top:2%;
+    margin-top: 2%;
     margin-left: 10%;
     border-radius: 10px;
     float: left;
 }
-.albumInput{
+
+.albumInput {
     width: 100%;
     height: 18%;
     margin-top: 2%;
     padding: 1%;
     float: left;
-    
 }
-input{
+
+input {
     width: 90%;
     height: 6%;
     margin-top: 2%;
@@ -92,28 +105,30 @@ input{
     float: left;
 }
 
-#bBuscar{
-    background-color: rgba(199, 81, 51, 0.9);
+#bBuscar {
+    background-color: #cc4c38;
     width: 40%;
     height: 12%;
     color: white;
     font-size: x-large;
     margin-left: 5%;
     margin-top: 2%;
+    border-radius: 5px;
 }
 
-#bGuardar{
-    background-color: rgba(199, 81, 51, 0.9);
+#bGuardar {
+    background-color: #cc4c38;
     width: 40%;
     height: 12%;
     color: white;
     font-size: x-large;
     margin-left: 10%;
     margin-top: 2%;
+    border-radius: 5px;
 }
 
-#bNuevacancion{
-    background-color: rgba(199, 81, 51, 0.9);
+#bNuevacancion {
+    background-color: #cc4c38;
     width: 50%;
     height: 9%;
     color: white;
@@ -121,10 +136,11 @@ input{
     margin-top: 5%;
     margin-left: 25%;
     margin-right: 25%;
+    border-radius: 5px;
 }
 
-#bActualizar{
-    background-color: rgba(199, 81, 51, 0.9);
+#bActualizar {
+    background-color: #cc4c38;
     width: 50%;
     height: 9%;
     color: white;
@@ -132,10 +148,11 @@ input{
     margin-top: 5%;
     margin-left: 25%;
     margin-right: 25%;
+    border-radius: 5px;
 }
 
-#bEliminar{
-    background-color: rgba(199, 81, 51, 0.9);
+#bEliminar {
+    background-color: #cc4c38;
     width: 50%;
     height: 9%;
     color: white;
@@ -143,9 +160,10 @@ input{
     margin-top: 5%;
     margin-left: 25%;
     margin-right: 25%;
+    border-radius: 5px;
 }
 
-#botones{
+#botones {
     background-color: transparent;
     width: 80%;
     height: 30%;
@@ -155,20 +173,21 @@ input{
     float: left;
 }
 
-
-
-button{
+button {
     background-color: transparent;
     width: 50%;
     height: 100%;
     border: none;
     float: left;
 }
-button:hover{
+
+button:hover {
     transform: scale(1.1);
 }
-#resultados{
-    background-color: rgba(199, 81, 51, 0.9);
+
+
+#resultados {
+    background-color: #AF1012;
     width: 35%;
     height: 55%;
     margin-top: 6%;
@@ -178,7 +197,7 @@ button:hover{
     float: left;
 }
 
-#conResultados{
+#conResultados {
     background-image: url('../../../assets/img/fondo_Usuario_boton.png');
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -187,20 +206,20 @@ button:hover{
     margin-top: 1%;
     margin-left: 2%;
     overflow: auto;
-    float:left;
+    float: left;
 }
 
 #conResultados::-webkit-scrollbar {
-	width: 15px;
-	border-radius: 10px;	
+    width: 15px;
+    border-radius: 10px;
 }
 
 #conResultados::-webkit-scrollbar-thumb {
-	background-image: linear-gradient(to right,white,grey);
-	border-radius: 5px;
+    background-image: linear-gradient(to right, white, grey);
+    border-radius: 5px;
 }
 
-#titulo{
+#titulo {
     background-color: transparent;
     width: 60%;
     height: 20%;
@@ -210,14 +229,15 @@ button:hover{
     float: left;
 }
 
-p{  
+p {
+
     margin-left: 5%;
     font-size: xx-large;
     color: black;
     float: left;
 }
 
-#resNuevos{
+#resNuevos {
     background-color: rgba(255, 255, 255, 0.5);
     width: 70%;
     height: 100%;
@@ -226,10 +246,10 @@ p{
     float: left;
 }
 
-#conAlbum{
+#conAlbum {
     background-color: white;
     width: 80%;
-    height : 12%;
+    height: 12%;
     margin-top: 2%;
     margin-left: 10%;
     font-size: x-large;
@@ -237,10 +257,10 @@ p{
     float: left;
 }
 
-#conBanda{
+#conBanda {
     background-color: white;
     width: 80%;
-    height : 12%;
+    height: 12%;
     margin-top: 2%;
     margin-left: 10%;
     font-size: x-large;
@@ -248,10 +268,10 @@ p{
     float: left;
 }
 
-#conCanciones{
+#conCanciones {
     background-color: white;
     width: 80%;
-    height : 70%;
+    height: 70%;
     margin-top: 2%;
     margin-left: 10%;
     font-size: x-large;
@@ -259,18 +279,18 @@ p{
     float: left;
 }
 
-.datosNuevos{
+.datosNuevos {
     background-color: red;
-    width : 30%;
+    width: 30%;
     height: 30%;
     color: blue;
     margin-left: 15%;
     float: left;
 }
 
-#datosNuevos{
+#datosNuevos {
     background-color: red;
-    width : 30%;
+    width: 30%;
     height: 30%;
     color: blue;
     margin-left: 15%;

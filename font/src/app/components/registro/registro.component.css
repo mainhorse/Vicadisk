@@ -18,7 +18,7 @@ input {
 }
 
 button {
-    background-color: #EC9063;
+    background-color: #cc4c38;
     width: 90%;
     height: 18%;
     padding: 5%;
@@ -76,5 +76,14 @@ button:hover {
         height: 40%;
         margin-left: 20%;
         margin-top: 120%;
+    }
+}
+
+@media only screen and (max-width: 322px) {
+    #container {
+        width: 60%;
+        height: 10%;
+        margin-left: 20%;
+        margin-top: 200%;
     }
 }
