@@ -67,11 +67,9 @@ img{
 
 #busHeader{
     background-color: transparent;
-    width: 60%;
+    width: 100%;
     height:20%;
     margin-top: 2%;
-    margin-left: 20%;
-    margin-right: 20%;
     float: left;
 }
 
@@ -93,6 +91,36 @@ img{
     font-size: xx-large;
     float: left;
 }
+
+ .caratulas{
+     width: 100%;
+     height: 100%;
+     float: left;
+ }
+.cards{
+    background-color: #AC1212;
+    width: 90%;
+    height: 100%;
+    margin-top: 10%;
+    margin-left: 5%;
+    color: white;
+    font-size: x-large;
+    border-radius: 10px;
+    float: left;
+}
+.listasRep{
+    background-color: transparent;
+    width: 30%;
+    height: 100%;
+}
+p{
+    width: 60%;
+    height: 10%;
+    margin-top: 1%;
+    margin-left: 5%;
+    float: left;
+}
+
 #derecho{
     background-color: #C75133;
     width: 45%;
@@ -158,14 +186,26 @@ img{
 }
 
 #contenido{
-    background-color:white;
+    background-color: #AC1212;
     width: 90%;
     height: 75%;
     margin-left: 5%;
     border: 2px solid rgba(0, 0, 0, 0.5);
+    overflow: auto;
     float: left;
 }
 
+#cardCanciones{
+    width : 100%;
+    height: 20%;
+}
+
+.audio{
+    width: 250px;
+    height: 80px;
+    margin-left: 3%;
+    float: left;
+}
 
 #contenido::-webkit-scrollbar {
 	width: 15px;

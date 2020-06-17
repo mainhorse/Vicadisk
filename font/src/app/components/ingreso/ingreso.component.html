@@ -1,10 +1,10 @@
 
 <div id="container">
     <form #formularioIngreso="ngForm" (ngSubmit)="ingresoUsuario()">
-        <input type="text" placeholder="correo" name="correo"
+        <input type="text" required placeholder="correo" name="correo"
         #correo="ngModel" [(ngModel)]="usuarioIngreso.correo" />
         <br>
-        <input type="password" placeholder="contraseña" name="contrasena"
+        <input type="password" required placeholder="contraseña" name="contrasena"
         #contrasena="ngModel" [(ngModel)]="usuarioIngreso.contrasena">
         <br>
         <button type="submit">Ingreso</button>

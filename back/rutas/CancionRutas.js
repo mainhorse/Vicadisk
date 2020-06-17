@@ -11,7 +11,9 @@ api.post('/nuevoAlbum',CancionControl.AgregarAlbum);
 
 api.put('/subirCanciones/:id',subCanDirectorio, CancionControl.LlenarAlbum);
 api.get('/ObtenerCaratula/:imageFile', CancionControl.mostrarArchivo);
+api.get('/ObtenerCancion/:cancion', CancionControl.buscarCancion)
+api.post('/buscarArtista',CancionControl.BuscarArtista);
 api.post('/buscarAlbum', CancionControl.BuscarAlbum);
 api.put('/actualizarAlbum/:id',CancionControl.ModificarAlbum);
 api.delete('/eliminarAlbum/:id',CancionControl.EliminarAlbum);
-module.exports = api;
+module.exports = api;   

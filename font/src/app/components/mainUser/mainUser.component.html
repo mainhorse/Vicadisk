@@ -10,6 +10,11 @@
                     <div id="titBusqueda">
                         Resultados
                     </div>
+                    <div class="cards" *ngFor=" let canciones of canciones">
+                        <button class="listasRep" (click)="mostrarCanciones(canciones)"><img src = "{{ this.url + 'ObtenerCaratula/' + canciones.caratula }}" alt="caratulas" class="caratulas"></button>
+                        <p>{{canciones.artista}}</p>
+                        <p>{{canciones.album}}</p>
+                    </div>
                 </header>
             </div>
         </div>
@@ -28,7 +33,12 @@
         <div id="cancionAlbum">
             <img [src]= cassete alt="casset" id="casset">
             <div id="tituloCancion"> Reproducir</div>
-            <div id="contenido">
+            <div id="contenido">  
+                <div class= "cardCanciones" *ngFor=" let reproducir of reproducir">
+                    <audio controls class="audio" src = "{{ this.url + 'ObtenerCancion/' + reproducir.cancion}}">
+                    </audio> 
+                </div>
+                           
             </div>
         </div>
     </aside>

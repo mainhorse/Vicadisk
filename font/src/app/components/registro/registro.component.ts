@@ -41,7 +41,7 @@ export class registroComponent{
                 let mensaje = response.message;
                 this.usuarioRegistro = usuario;
                 if(!this.usuarioRegistro._id){
-                    alert('Datos incorrectos');
+                    alert(mensaje);
                     this.usuarioRegistro = new Usuario('','','','','','usuario','');
                 }else {
                     alert(`Registro exitoso! Iniciar sesion con ${this.usuarioRegistro.correo}`);
@@ -52,7 +52,7 @@ export class registroComponent{
             error =>{
                 var errorMensaje = <any>error;
                 if(errorMensaje != null){
-                    console.log(error);
+                    alert ('Porfavor llene los datos');
                 }
             }
         )
