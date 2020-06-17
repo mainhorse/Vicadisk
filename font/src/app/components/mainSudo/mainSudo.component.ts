@@ -48,7 +48,7 @@ export class mainSudoComponent{
                 if(!this.musica._id){
                     alert('Album no guardado');
                 } else {
-                    alert(`Se a guardado el album ${this.musica.album}`);
+                    alert(`Se ha guardado el album ${this.musica.album}`);
                     localStorage.setItem('album', JSON.stringify(album));
                     window.location.reload();
                 }
@@ -98,15 +98,43 @@ export class mainSudoComponent{
    }
 
    actualizar(){
-
+    this.cancioneServicio.ActualizarAlbum(this.album._id, this.musica).subscribe((response : any ) =>{
+        let resultado = response.album;
+        let mensaje = response.message;
+        console.log(resultado)
+        if(resultado){
+            alert(mensaje);
+            localStorage.setItem('album', JSON.stringify(resultado));
+        } else {
+            alert("No se pudo actualizar el album");
+        }
+    })
    }
 
    eliminar(){
+       this.cancioneServicio.EliminarAlbum(this.album._id).subscribe((response : any) =>{
+           let borrado = response.borrado;
+           let mensaje = response.message;
+           if(borrado){
+               alert(mensaje);
+               localStorage.setItem('album', JSON.stringify(this.musica));
+               window.location.reload();
+           }else {
+               alert(mensaje);
+           }
+       },error =>{
+           var errorMensaje = <any>error;
+           if(errorMensaje != null){
+               console.log(errorMensaje);
+           }
+       }
+       
+       )
        
    }
 
     mostrarInf(){
-
+        
         var containerAlbum = document.getElementById('conAlbum');
         var containerBanda = document.getElementById('conBanda');
         var containerCanciones = document.getElementById('conCanciones');
@@ -115,9 +143,11 @@ export class mainSudoComponent{
         containerCanciones.innerHTML = "";
         
         var datos = JSON.parse(localStorage.getItem('album'));
+        
         var album = datos.album;
         var artista = datos.artista;
         var titulos = datos.titulo; 
+        console.log(titulos.length) // este es el que importa
 
         var titulo = document.createElement('div');
         var conTitulo = document.createTextNode('Album = ' + album);
@@ -130,15 +160,13 @@ export class mainSudoComponent{
         var listas = document.createElement('div');
         var conLista = document.createTextNode(titulos);
         listas.appendChild(conLista);
-        containerCanciones.appendChild(listas)
-    
-        
+
+        containerCanciones.appendChild(listas)  
         containerAlbum.appendChild(titulo);
         containerBanda.appendChild(banda)
 
-        titulo.setAttribute('class','datosNuevos');
-       // banda.setAttribute('class', 'datosNuevos');
-        
+        titulo.setAttribute("class","datosNuevos");
+        banda.setAttribute("class","datosNuevos");        
     }
     
 }

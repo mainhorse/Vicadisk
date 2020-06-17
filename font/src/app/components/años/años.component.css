@@ -6,6 +6,12 @@
     float: left;
 }
 
+@media (max-width: 1100px){
+    #container{
+        width: 1000px;
+        height: 120px
+    }
+}
 .botAños{
     width: 20%;
     height: 90%;

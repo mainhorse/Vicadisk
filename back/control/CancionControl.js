@@ -106,18 +106,36 @@ function BuscarAlbum(req,res){
     })
 }
 
+function BuscarArtista(req,res){
+    var parametros = req.body;
+    artista = parametros.artista;
+    Cancion.find({artista : artista }, (err , Albunes )=>{
+        if(err){
+            res.status(500).send({ message : "error del servidor"});
+        } else {
+            if(!Albunes){
+                res.status(200).send({ message : "No se encontrar el artista"});
+            } else {
+                res.status(200).send({
+                    message :" Se encontraron concidencias",
+                    busqueda : Albunes
+                })
+            }
+        }
+    })
+}
+
 function ModificarAlbum(req,res){
     var albumId = req.params.id;
-    var cambios = req.body;
-    console.log(albumId);
-    console.log(cambios);
+    var albumNuevo = req.body.album;
+    var artistaNuevo = req.body.artista;   
 
-    Cancion.findByIdAndUpdate(albumId, cambios, (err, AlbumActualizado)=>{
+    Cancion.findByIdAndUpdate(albumId, {album : albumNuevo , artista : artistaNuevo }, (err, AlbumActualizado)=>{
         if(err){
             res.status(500).send({message : "Error en el servidor"});
         } else {
             if(!AlbumActualizado){
-                res.status(200).send({ message : "datos incorrectos"});
+                res.status(200).send({ message : "No se pudo actualizar el album"});
             } else {
                 res.status(200).send({
                     message : "Album actualizado",
@@ -136,11 +154,11 @@ function EliminarAlbum(req,res){
             res.status(500).send({ message : "Error en el serivdor"});
         } else {
             if(!AlbumEliminado){
-                res.status(200).send({message : "Datos invalidos"});
+                res.status(200).send({message : "No se ha seleccionado un album para eliminar"});
             } else {
                 res.status(200).send({
                     message : "Album Eliminado",
-                    album :AlbumEliminado
+                    borrado :AlbumEliminado
                 })
             }
         }
@@ -151,7 +169,7 @@ function mostrarArchivo(req, res){
     // pedir el archivo que queremos mostrar
 
     var archivo = req.params.imageFile;
-    console.log(archivo);
+    console.log(`el archivo es : ${archivo}`);
     // Ubicacion del archivo
     var ruta = './archivos/canciones/' + archivo;
 
@@ -166,10 +184,29 @@ function mostrarArchivo(req, res){
     })
 }
 
+function buscarCancion(req,res){
+    var archivo = req.params.cancion;
+    console.log(archivo);
+    // Ubicacion del archivo
+    var ruta = './archivos/canciones/' + archivo;
+
+    // validar si existe o no
+    // fs.exists('la ruta del archivo'. (exiate)=>{})
+    fs.exists(ruta,(exist)=>{
+        if(exist){
+            res.sendFile(path.resolve(ruta));
+        } else{
+            res.status(200).send({message: "cancion no disponible"});
+        }
+    })
+}
+
 module.exports = {
     AgregarAlbum,
     LlenarAlbum,
-    BuscarAlbum,    
+    BuscarAlbum, 
+    buscarCancion,  
+    BuscarArtista, 
     ModificarAlbum,
     EliminarAlbum,
     mostrarArchivo

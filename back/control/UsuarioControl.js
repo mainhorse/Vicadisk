@@ -16,28 +16,29 @@ function registrarUsuario(req, res) {
     usuario.contrasena = parametros.contrasena;
     usuario.rol = 'Usuario'; // podemos quemar en la base de datos el registro del usuario con rol admin
     usuario.imagen = null;
-
-    //funcion save para interactuar con la BD
-    if (usuario.nombre == "" && usuario.apellido == "" && usuario.correo == "" && usuario.contrasena == "") {
-        console.log("No quedaste registrado")
-
-    } else {
-        usuario.save((err, usuarioNuevo) => {
-            if (err) {
-                res.status(500).send({ message: "Error del servidor" });
-            } else {
-                if (!usuarioNuevo) {
-                    res.status(200).send({ message: "No fue posible realizar el registro" });
-                } else {
-                    res.status(200).send({
-                        message: "Usuario Creado",
-                        usuario: usuarioNuevo
-                    });
-                }
+    
+    if(usuario.correo != '' || usuario.contrasena != ''){
+        //funcion save para interactuar con la BD
+    usuario.save((err,usuarioNuevo)=>{
+        if(err){
+            res.status(500).send({message: "Error del servidor"});
+        } else {
+            if(!usuarioNuevo){
+                res.status(200).send({message : "No fue posible realizar el registro"});
+            } else{
+                res.status(200).send({
+                    message : "Usuario Creado",
+                    usuario: usuarioNuevo
+                });
             }
-        });
-    }
-
+            
+        }
+            
+    });
+    } 
+    else if(err){
+        res.status(200).send({message: "porfavor llene los datos"});
+    } 
 }
 
 //Funcion de login
