@@ -14,14 +14,11 @@ function registrarUsuario(req, res) {
     usuario.apellido = parametros.apellido;
     usuario.correo = parametros.correo;
     usuario.contrasena = parametros.contrasena;
-    usuario.rol = 'Usuario'; // podemos quemar en la base de datos el registro del usuario con rol admin
+    usuario.rol = 'administrador'; // podemos quemar en la base de datos el registro del usuario con rol admin
     usuario.imagen = null;
 
-    //funcion save para interactuar con la BD
-    if (usuario.nombre == "" && usuario.apellido == "" && usuario.correo == "" && usuario.contrasena == "") {
-        console.log("No quedaste registrado")
-
-    } else {
+    if (usuario.correo != '' || usuario.contrasena != '') {
+        //funcion save para interactuar con la BD
         usuario.save((err, usuarioNuevo) => {
             if (err) {
                 res.status(500).send({ message: "Error del servidor" });
@@ -34,10 +31,13 @@ function registrarUsuario(req, res) {
                         usuario: usuarioNuevo
                     });
                 }
-            }
-        });
-    }
 
+            }
+
+        });
+    } else if (err) {
+        res.status(200).send({ message: "porfavor llene los datos" });
+    }
 }
 
 //Funcion de login
@@ -150,7 +150,7 @@ function subirImg(req, res) {
     } else {
 
 
-        res.status(200).send({message : "No has subido una cancion..."});
+        res.status(200).send({ message: "No has subido una cancion..." });
 
     }
 }

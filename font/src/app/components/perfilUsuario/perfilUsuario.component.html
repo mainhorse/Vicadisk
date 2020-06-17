@@ -1,51 +1,49 @@
 <div id="container">
     <header id="heaUsuario">
         <div id="logo">
-            <img [src] = logo alt="logo">
+            <img [src]=logo alt="logo">
         </div>
         <div id="nombre">
             Vicadisk
         </div>
         <div id="buscar">
-            <input placeholder="Busca tu cancion">
-            <button id="butBuscar"></button>
+            <form #formularioBusqueda="ngForm" (ngSubmit)="buscarArtista()" id="formBuscar">
+                <input type="text" placeholder="Busca tu artista" name="artista" #artista="ngModel" [(ngModel)]="busAlbum.artista" />
+                <button type="submit" id="butBuscar"></button>
+            </form>
         </div>
         <div id="foto">
             <img id="fotUsuario" src="{{ url + 'obtenerImagen/' + identidad.imagen}}" alt="fotoUsuario" width=100%/>
-        </div>       
+        </div>
     </header>
     <nav id="navUsuario">
         <ul>
-            <li id="perfil" (click)='datosUsuario()'>Datos</li>
-                <ul id="ulPerfil" >
-                    <div id="containerDatos">
-                        <img id="imgUsuario" src="{{ url + 'obtenerImagen/' + identidad.imagen}}" />
-                          
-                        <span> Bienvenid@ {{ identidad.nombre }}</span>
-                        
-                        <!-- Formulario Actualizar Datos Usuario-->
-                        
-                        <form id="datos" #formularioActualizado="ngForm" (ngSubmit)="actualizarUsuario()">
-                            <input type="text" class="datos" placeholder="Nombre" name="nombre"
-                            #nombre="ngModel" [(ngModel)]="usuarioActualizar.nombre">
-                            <input type="text" class="datos" placeholder="apellido" name="apellido"
-                            #apellido="ngModel" [(ngModel)] = "usuarioActualizar.apellido">
-                            <input type="text" class="datos" placeholder="Correo"  name="correo"
-                            #correo="ngModel" [(ngModel)]="usuarioActualizar.correo">
-                            <input type="password" class="datos" placeholder="Contraseña" name="contrasena"
-                            #contrasena="ngModel" [(ngModel)]="usuarioActualizar.contrasena">
-                            <br><br>
-                        
-                            <input type="file" class="datos" placeholder="Subir Imagen" (change)="subirArchivo($event)">
-                            <!--
+            <li id="perfil" (click)='datosUsuario()' style="cursor: pointer;">Datos</li>
+            <ul id="ulPerfil">
+                <div id="containerDatos">
+                    <img id="imgUsuario" src="{{ url + 'obtenerImagen/' + identidad.imagen}}" />
+
+                    <span> Bienvenid@ {{ identidad.nombre }}</span>
+
+                    <!-- Formulario Actualizar Datos Usuario-->
+
+                    <form id="datos" #formularioActualizado="ngForm" (ngSubmit)="actualizarUsuario()">
+                        <input type="text" class="datos" placeholder="Nombre" name="nombre" #nombre="ngModel" [(ngModel)]="usuarioActualizar.nombre">
+                        <input type="text" class="datos" placeholder="apellido" name="apellido" #apellido="ngModel" [(ngModel)]="usuarioActualizar.apellido">
+                        <input type="text" class="datos" placeholder="Correo" name="correo" #correo="ngModel" [(ngModel)]="usuarioActualizar.correo">
+                        <input type="password" class="datos" placeholder="Contraseña" name="contrasena" #contrasena="ngModel" [(ngModel)]="usuarioActualizar.contrasena">
+                        <br><br>
+
+                        <input type="file" class="datos" placeholder="Subir Imagen" (change)="subirArchivo($event)">
+                        <!--
                                 previsualizacion de la imagen
                             -->
-                            <button type="submit" id="bDatos">Actualizar Datos</button>
-                        </form>
-                        </div>
-                </ul>
-            <li>{{correoUsu}}</li>
-            <li (click)='cerrar()'>Cerrar</li>
+                        <button type="submit" id="bDatos">Actualizar Datos</button>
+                    </form>
+                </div>
+            </ul>
+            <li style="cursor:default;">{{correoUsu}}</li>
+            <li (click)='cerrar()' style="cursor: pointer;">Cerrar</li>
         </ul>
 
     </nav>

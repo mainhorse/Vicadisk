@@ -54,12 +54,13 @@ export class ingresoComponent{
                         // creamos el objeto localStorage  
                         localStorage.setItem('sesion',JSON.stringify(datosUsuario));
                         let dir = JSON.parse(localStorage.getItem('sesion'));
+
                         if(dir.rol == "administrador"){
-                            console.log(dir.rol);
                             localStorage.setItem('pagina','administrador'); 
                             localStorage.setItem('album', JSON.stringify(this.cancion)); 
                         } else {
                             localStorage.setItem('pagina','usuario'); 
+                            localStorage.setItem('album', JSON.stringify(this.cancion));
                         }                                               
                         // Consumir el servidor
                         this.identidad = this.usuarioServicio.obtenerNombreUsuario();
@@ -71,7 +72,6 @@ export class ingresoComponent{
         error =>{
             var errorMensaje = <any>error;
             if(errorMensaje != null){
-                console.log(error);
                 alert('Datos Incorrectos');
             }
         }

@@ -1,19 +1,44 @@
-#container{
+#container {
     background-color: rgb(255, 255, 255);
     width: 100%;
     height: 25%;
     float: left;
 }
 
-#heaUsuario{
-    background-color: rgba(199, 81, 51, 0.9);
+@media(max-width: 1100px) {
+    #container {
+        width: 1100px;
+        height: 200px;
+    }
+    #nombre {
+        background-color: transparent;
+        width: 35%;
+        height: 50%;
+        margin-top: 3%;
+        margin-left: 1%;
+        font-size: 82px;
+        color: white;
+        float: left;
+    }
+    #buscar {
+        background-color: white;
+        width: 20%;
+        height: 35%;
+        margin-top: 3.5%;
+        border-radius: 10px;
+        float: left;
+    }
+}
+
+#heaUsuario {
+    background-color: #AF1012;
     width: 100%;
     height: 70%;
     float: left;
 }
 
-#logo{
-    background-color:transparent;
+#logo {
+    background-color: transparent;
     width: 12%;
     height: 90%;
     margin-top: 0.8%;
@@ -21,8 +46,8 @@
     float: left;
 }
 
-#nombre{
-    background-color:transparent;
+#nombre {
+    background-color: transparent;
     width: 30%;
     height: 50%;
     margin-top: 3%;
@@ -32,7 +57,7 @@
     float: left;
 }
 
-#buscar{
+#buscar {
     background-color: white;
     width: 25%;
     height: 35%;
@@ -41,7 +66,12 @@
     float: left;
 }
 
-input{
+#formBuscar {
+    width: 100%;
+    height: 100%;
+}
+
+input {
     width: 80%;
     height: 90%;
     margin-top: 0.5%;
@@ -52,17 +82,17 @@ input{
     float: left;
 }
 
-#butBuscar{
+#butBuscar {
     background-image: url('../../../assets/img/diskman.png');
     background-size: 100% 100%;
     width: 18%;
-    height: 90%; 
+    height: 60px;
     margin-top: 0.5%;
     border: none;
     float: left;
 }
 
-#foto{
+#foto {
     background-color: rgba(255, 255, 255, 0.5);
     width: 8%;
     height: 90%;
@@ -71,47 +101,53 @@ input{
     float: left;
 }
 
-#fotUsuario{
+#fotUsuario {
     width: 100%;
-    height: 100%;
+    height: 120px;
     float: left;
 }
-img{
+
+img {
     width: 100%;
     height: 100%;
 }
 
-#navUsuario{
-    background-image: linear-gradient(to right, white,grey, black);
+#navUsuario {
+    background-image: linear-gradient(to right, white, grey, black);
     width: 100%;
     height: 30%;
     float: left;
     float: left;
 }
 
-ul{
+ul {
     width: 90%;
-    height: 60%;    
+    height: 60%;
 }
-#perfil{    
+
+#perfil {
     width: 8%;
     margin-right: 31%;
     color: black;
     text-align: center;
 }
 
-#ulPerfil{
-    background-color: rgba(199, 81, 51, 1);
+#ulPerfil {
+    background-color: #ac1618;
     width: 18%;
     height: 55%;
     display: none;
     position: absolute;
+    border-radius: 10px;
+    border: 1px solid black;
 }
-.liPerfil{
+
+.liPerfil {
     display: block;
     text-decoration: none;
 }
-li{
+
+li {
     width: 20%;
     margin-left: 6%;
     font-size: xx-large;
@@ -121,17 +157,18 @@ li{
     color: white;
 }
 
+
 /*----- parte de los datos--*/
 
-#containerDatos{
-    background-color: rgba(199, 81, 51, 1);
+#containerDatos {
+    background-color: #AF1012;
     width: 100%;
     height: 100%;
     border-radius: 10px;
     float: left;
-
 }
-#imgUsuario{
+
+#imgUsuario {
     background-color: white;
     width: 40%;
     height: 25%;
@@ -140,20 +177,22 @@ li{
     margin-right: 30%;
     float: left;
 }
-span{
+
+span {
     width: 80%;
     height: 4%;
     color: white;
     text-align: center;
     float: left;
 }
-#datos{
+
+#datos {
     width: 85%;
     height: 50%;
     float: left;
 }
 
-.datos{
+.datos {
     width: 100%;
     height: 18%;
     margin-top: 2%;
@@ -162,9 +201,8 @@ span{
     float: left;
 }
 
-
-#bDatos{
-    background-color: rgba(199, 81, 51, 1);
+#bDatos {
+    background-color: #AF1012;
     width: 100%;
     height: 25%;
     margin-top: 2%;

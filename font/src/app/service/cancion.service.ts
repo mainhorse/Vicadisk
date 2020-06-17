@@ -35,6 +35,20 @@ url = 'http://localhost:3000/api/';
     ).pipe(map(res => res));
   }
 
+  buscarArtista(datos){
+    console.log(datos)
+    let params = JSON.stringify(datos);
+    let options = {
+      headers : new HttpHeaders({"Content-Type" : "application/json"})
+    };
+
+    return this._http.post(
+      this.url + 'buscarArtista',
+      params,
+      options
+    ).pipe(map(res => res));
+  }
+
   CancionNueva(file: File, id, nombre){
     // instanciamos el objeto FormData que nos permitira enviar la img
     let formData = new FormData();
@@ -46,4 +60,23 @@ url = 'http://localhost:3000/api/';
       ).pipe(map(res => res));
     }
   
+  ActualizarAlbum(id,datosNuevos){
+    console.log(datosNuevos);
+    let params = JSON.stringify(datosNuevos);
+    let options = {
+      headers : new HttpHeaders({'Content-Type' : 'application/json'})
+    };
+
+    return this._http.put(
+      this.url + 'actualizarAlbum/' + id,
+      params,
+      options
+    ).pipe(map(res => res))
+  }
+
+  EliminarAlbum(idAlbum){
+      return this._http.delete(
+        this.url + 'eliminarAlbum/' + idAlbum,
+      ).pipe(map(res => res))
+  }
 }
