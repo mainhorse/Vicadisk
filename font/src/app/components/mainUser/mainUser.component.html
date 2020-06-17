@@ -106,8 +106,14 @@ Este codigo va donde se en el contenedor donde se van a reproducir las canciones
             <aside id="derecho">
               <div id="mp3"> 
                   <div id="sonido">
+                    <div id="contenido">  
+                      <div class= "cardCanciones" *ngFor=" let reproducir of reproducir">
+                          <audio controls class="audio" src = "{{ this.url + 'ObtenerCancion/' + reproducir.cancion}}">
+                          </audio> 
+                      </div>   
+                    </div> 
                   </div>
-                  <div class="contenedor-barra">
+                  <!-- <div class="contenedor-barra"> 
                     <div class="line1"></div>
                     <div class="line2"></div>
                     <div class="line3"></div>
