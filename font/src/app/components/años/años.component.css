@@ -1,9 +1,11 @@
+
 #container {
     width: 90%;
     height: 15%;
-    margin-left: 5%;
+    margin-left: 2.8%;
     float: left;
 }
+
 
 @media (max-width: 1100px) {
     #container {
@@ -13,11 +15,13 @@
 }
 
 .botAños {
+
     width: 20%;
     height: 90%;
     margin-left: 4%;
-    float: left;
+	float: left;
 }
+
 
 .botAños:hover {
     transform: scale(1.1);
@@ -25,10 +29,236 @@
 
 button {
     background-color: #cc4c38;
+
     width: 100%;
-    height: 50%;
-    margin-top: 10%;
+    height: 100%;
+    margin-top: 8%;
     font-size: xx-large;
     color: white;
     border-radius: 10px;
+    padding: 10px;
+	
 }
+
+.sabias{
+	width: 100%;
+	height: 100%;
+}
+
+.sab{
+	width: 93%;
+    height: 90%;
+    margin-left: 4%;
+	float: left;
+	margin-top: 2%;
+	list-style: none;
+
+}
+
+
+
+.banner2{
+    width: 477px;
+    height: 216px;
+    border: 2px solid black;
+    margin: auto;
+    margin-left: -880%;
+	background-image: linear-gradient(to right, #D9D9D9, #8c8c8c);
+	border-radius: 10px;
+	margin-top: -10%;
+	filter: drop-shadow(2px 2px 5px #c2c2c2);
+	
+}
+header{
+	width: 100%;
+}
+
+.navegacion{
+	width: 1000px;
+	margin: 30px auto;
+	background: #fff;
+}
+
+.navegacion ul{
+	list-style: none;
+}
+
+.menu > li{
+	
+    display: inline-block;
+    list-style: none;
+}
+
+.menu > li > a{
+	display: block;
+	padding: 15px 20px;
+	color: #353535;
+	font-family: 'Open sans';
+	text-decoration: none;
+}
+
+.menu li a:hover{
+	color: #AF1012 ;
+	transition: all .3s;
+}
+
+/* Submenu*/
+
+.banner1 {
+	position: absolute;
+	background: #333333;
+	width: 110%;
+	visibility: hidden;
+	opacity: 0;
+    transition: opacity 1.5s;
+    background-color: transparent;
+}
+
+#ban1{
+	margin-left: 47%;
+	margin-top: -12%;
+}
+
+#ban2{
+	margin-left: -63%;
+	margin-top: -12%;
+}
+
+#ban3{
+	margin-left: -171%;
+	margin-top: -12%;
+}
+
+#ban4{
+	margin-left: -281%;
+	margin-top: -12%;
+}
+	
+
+/* .banner1 li a{
+	display: block;
+	padding: 15px;
+	color: #fff;
+	font-family: 'Open sans';
+	text-decoration: none;
+} */
+
+.menu li:hover .banner1{
+	visibility: visible;
+	opacity: 1;
+}
+
+.banner2{
+	
+    width: 477px;
+    height: 223px;
+    border: 2px solid black;
+    margin: auto;
+    margin-right: 70%;
+	background-image: linear-gradient(to right, #F2A20C, #F28705);
+	border-radius: 10px;
+	margin-top: 20%;
+	filter: drop-shadow(2px 2px 5px #c2c2c2);
+	display: block;
+	
+}
+	
+
+.banner3{
+	
+    width: 477px;
+    height: 216px;
+    border: 2px solid black;
+    margin: auto;
+	margin-right: 40%;
+	background-image: linear-gradient( to right, #9BDAF2, #0b29c9) ;
+	border-radius: 10px;
+	margin-top: 20%;
+	filter: drop-shadow(2px 2px 5px #c2c2c2);
+	display: block;
+}
+.banner4{
+    width: 477px;
+    height: 216px;
+    border: 2px solid black;
+    margin: auto;
+	margin-right: 40%;
+	background-image: linear-gradient( to right, #A61C35, #A60303);
+	border-radius: 10px;
+	margin-top: 20%;
+	filter: drop-shadow(2px 2px 5px #c2c2c2);
+	display: block;
+	
+}
+.banner5{
+    width: 477px;
+    height: 216px;
+    border: 2px solid black;
+    margin: auto;
+	margin-right: 90%;
+	background-image: linear-gradient( to right, yellow, #F28705) ;
+	border-radius: 10px;
+	margin-top: 20%;
+	filter: drop-shadow(2px 2px 5px #c2c2c2);
+	display: block;
+}
+img{
+    width: 221px;
+	height: 126px;
+	margin-top: 4%;
+	margin-left: 5%;
+	border-radius: 5px;
+	filter: drop-shadow(2px 2px 5px #c2c2c2)
+	
+}
+.img1{
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+p{
+	font-family: serif;
+	color: white;
+	margin-left: 49%;
+	margin-top: -28%;
+	padding: 0px 10px 3px 20px;
+	font-size: 18px;
+	
+}
+.container1{
+	margin-right: 60%;
+}
+
+/* COLOR */
+
+.ul-fill { 
+    list-style-type: none;
+    display: inline-flex;
+    align-items: start;
+    list-style: none;
+  }
+.li-fill {
+      padding: 6px 0;
+  }
+.a-fill {
+        --fill-color: #AF1012;
+        position: relative;
+        display: block;
+        padding: 4px 0;
+        font: 700 3rem sans-serif;
+        text-decoration: none;
+        text-transform: uppercase;
+        -webkit-text-stroke: 2px var(--fill-color);
+        background: linear-gradient(var(--fill-color) 0 100%) left / 0 no-repeat;
+        color: transparent;
+        background-clip: text;
+        transition: 0.5s linear;
+        font-size: 21px;
+        margin-left: 30px;
+        text-align: center;
+  }
+.a-fill:hover {
+          background-size: 100%;
+        }
+      
