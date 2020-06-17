@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Usuario } from '../../modelo/usuario';
+import { Cancion } from '../../modelo/Cancion';
 import { UsuarioService } from '../../service/usuario.service';
+import { CancionService } from '../../service/cancion.service';
 @Component({
     selector: 'app-perfilUsuario',
     templateUrl: 'perfilUsuario.component.html',
@@ -19,10 +21,13 @@ export class perfilUsuarioComponent{
     logo = 'assets/img/logo_vicadisk.png';
     foto = 'assets/img/datPer.png';
     public url: String; 
+    public busAlbum : Cancion;
     constructor(
-        private usuarioService : UsuarioService
+        private usuarioService : UsuarioService,
+        private cancionService : CancionService
     ){
         this.url = usuarioService.url;
+        this.busAlbum = new Cancion('','','','',[],[]);
     }
     
     ngOnInit(): void{
@@ -34,6 +39,23 @@ export class perfilUsuarioComponent{
         this.archivoSubir = <File>fileInput.target.files[0];
     }    
 
+    buscarArtista(){
+        console.log(this.busAlbum.artista);
+        this.cancionService.buscarArtista(this.busAlbum).subscribe((response : any) =>{ 
+            var resultado = response.busqueda;
+            if(resultado == ''){
+                alert('no se encontraron concidencias');
+            }else if(resultado){
+                localStorage.setItem('album', JSON.stringify(response.busqueda));
+                window.location.reload();
+            }
+        }, error =>{
+            var errorMensaje = <any>error;
+            if(errorMensaje != null){
+                alert('no se encontraron considencias');
+            }
+        })
+    }
     //actualizar usuarios
     actualizarUsuario(){
         this.usuarioService.editarUsuario(this.usuarioActualizar._id, this.usuarioActualizar).subscribe(

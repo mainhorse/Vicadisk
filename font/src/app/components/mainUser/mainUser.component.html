@@ -1,3 +1,11 @@
+<!--  
+Este codigo va donde se en el contenedor donde se van a reproducir las canciones de los albunes
+<div id="contenido">  
+                <div class= "cardCanciones" *ngFor=" let reproducir of reproducir">
+                    <audio controls class="audio" src = "{{ this.url + 'ObtenerCancion/' + reproducir.cancion}}">
+                    </audio> 
+                </div>
+-->
 <section class="noticias">
   <article class="main_content">
     <div class="cards-s-big"></div>
@@ -40,6 +48,11 @@
                           <div id="titBusqueda">
                               Resultados
                           </div>
+                          <div class="cards" *ngFor=" let canciones of canciones">
+                              <button class="listasRep" (click)="mostrarCanciones(canciones)"><img src = "{{ this.url + 'ObtenerCaratula/' + canciones.caratula }}" alt="caratulas" class="caratulas"></button>
+                              <p>{{canciones.artista}}</p>
+                              <p>{{canciones.album}}</p>
+                           </div>
                       </header>
                       <section class="s-categories" id="grafica">
                           <h2 class="s-titulo">Albumes</h2>
@@ -91,7 +104,7 @@
         
           <div class="full-card-big">    
             <aside id="derecho">
-              <div id="mp3">  
+              <div id="mp3"> 
                   <div id="sonido">
                   </div>
                   <div class="contenedor-barra">
@@ -117,29 +130,17 @@
                     <source src="horse.ogg" type="audio/ogg">
                     <source src="horse.mp3" type="audio/mpeg">
                   </audio>
-                  </div>
-           <!--  
-                  <div id="botReproduccion">
-                      <button>Ret</button>
-                      <button>play</button>
-                      <button>paus</button>
-                      <button>adel</button>
-                  </div>-->
-           
-                  <!-- Lineas Del FLow  -->
-
-                  
+                </div>           
+                  <!-- Lineas Del FLow  -->                
             
-              </div>
-              
-             
+              </div>  
           </aside>
           </div>
         
           <div class="full-card-big-1">
             <aside id="izquierdo">
               <div id="resultado">
-                  <div id="canciones">
+                  <div id="canciones"> 
                       <header id="busHeader">
                         <img [src]= cassete alt="casset" id="casset">
                           <div id="titBusqueda">
@@ -196,10 +197,5 @@
     </section>
   </article>
 </section>
-
-
-
-
-
 
 

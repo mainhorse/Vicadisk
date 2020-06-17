@@ -7,8 +7,11 @@
             Vicadisk
         </div>
         <div id="buscar">
-            <input placeholder="Busca tu cancion">
-            <button id="butBuscar"></button>
+            <form #formularioBusqueda="ngForm" (ngSubmit)= "buscarArtista()" id="formBuscar">
+                <input type="text" placeholder="Busca tu cancion" name="artista"
+                #artista="ngModel" [(ngModel)]="busAlbum.artista" />
+                <button type="submit" id="butBuscar"></button>
+            </form>            
         </div>
         <div id="foto">
             <img id="fotUsuario" src="{{ url + 'obtenerImagen/' + identidad.imagen}}" alt="fotoUsuario" width=100%/>
