@@ -11,6 +11,7 @@
         height: 200px;
     }
 }
+
     #nombre {
         background-color: transparent;
         width: 35%;
@@ -75,7 +76,7 @@
 
 input {
     width: 80%;
-    height: 90%;
+    height: 45px;
     margin-top: 0.5%;
     font-size: x-large;
     text-align: center;
@@ -88,7 +89,7 @@ input {
     background-image: url('../../../assets/img/diskman.png');
     background-size: 100% 100%;
     width: 18%;
-    height: 60px;
+    height: 40px;
     margin-top: 0.5%;
     border: none;
     float: left;

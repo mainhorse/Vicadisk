@@ -18,7 +18,6 @@
     width: 100%;
     height: 100%;
     text-align: center;
-    background-image: url('../../../assets/img/fondocuatro.jpg');
     background-repeat: no-repeat;
     background-size: 100% 100%;
     width: 100%;
@@ -344,23 +343,16 @@ img{
 
  .caratulas{
      width: 100%;
-<<<<<<< Updated upstream
      height: 100%;
      float: left;
  }
-=======
-     height: 100px;
-     float: left;
- }
 
-
->>>>>>> Stashed changes
 .cards{
     background-color: #AC1212;
-    width: 90%;
-    height: 100%;
-    margin-top: 10%;
-    margin-left: 5%;
+    width: 70%;
+    height: 40%;
+    margin-top: 4%;
+    margin-left: 15%;
     color: white;
     font-size: x-large;
     border-radius: 10px;
@@ -371,37 +363,35 @@ img{
     background-color: transparent;
     width: 30%;
     height: 100%;
-}
-
-<<<<<<< Updated upstream
-p{
-    width: 60%;
-    height: 10%;
-    margin-top: 1%;
-    margin-left: 5%;
     float: left;
 }
 
-=======
->>>>>>> Stashed changes
+
 #derecho{
     border-radius: 10px;
     width: 100%;
-    height: 100%;
+    height: 800px;
+    float: left;
+}
+
+#sonido{
+    width: 100%;
+    height: 95%;
+    float:left;
 }
 
 #mp3 {
+    width: 100%;
+    height: 100%;
     background-image: url('../../../assets/img/fondo_reproduccion.png');
     background-repeat: no-repeat;
     background-size: 100% 100%;
     width: 100%;
+    height: 40%;
     overflow:hidden;    
 }
   
-#sonido{
-        width: 100%;
-        height: 95%;
-}
+
 
 #botReproduccion {
     width: 100%;
@@ -441,14 +431,9 @@ p{
 
 #contenido{
     background-color: #AC1212;
-<<<<<<< Updated upstream
     width: 90%;
     height: 75%;
     margin-left: 5%;
-=======
-    width: 60%;
-    height: 55%;
->>>>>>> Stashed changes
     border: 2px solid rgba(0, 0, 0, 0.5);
     overflow: hidden;
     float: left;
@@ -463,7 +448,7 @@ p{
 }
 
 .audio{
-    width: 250px;
+    width: 280px;
     height: 80px;
     margin-left: 8%;
     float: left;
