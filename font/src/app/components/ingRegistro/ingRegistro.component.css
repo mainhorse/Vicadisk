@@ -98,11 +98,11 @@ button:hover {
     }
 }
 
-@media only screen and (max-width: 583px) {
+@media only screen and (max-width: 590px) {
     #container {
         width: 80%;
-        height: 550px;
-        margin-top: 5%;
+        height: 100%;
+        margin-top: 70%;
         margin-left: 10%;
     }
     button {
