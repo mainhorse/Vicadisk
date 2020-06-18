@@ -3,6 +3,8 @@ import { Usuario } from '../../modelo/usuario';
 import { Cancion } from '../../modelo/Cancion';
 import { UsuarioService } from '../../service/usuario.service';
 import { CancionService } from '../../service/cancion.service';
+
+import Swal from 'sweetalert2';
 @Component({
     selector: 'app-perfilUsuario',
     templateUrl: 'perfilUsuario.component.html',
@@ -44,7 +46,16 @@ export class perfilUsuarioComponent{
         this.cancionService.buscarArtista(this.busAlbum).subscribe((response : any) =>{ 
             var resultado = response.busqueda;
             if(resultado == ''){
-                alert('no se encontraron concidencias');
+                Swal.fire({
+                    title: 'Lo sentimos :c',
+                    text: `Tu artísta no esta disponible en nuestro sistema por ahora`,
+                    imageUrl: '../../assets/img/flores.jpeg',
+                    imageWidth: 400,
+                    imageHeight: 200,
+                    imageAlt: 'Custom image', 
+                    confirmButtonColor: '#F76363',
+                    backdrop: ` rgba(0,0,0,0.5) left top no-repeat`
+                }).finally
             }else if(resultado){
                 localStorage.setItem('album', JSON.stringify(response.busqueda));
                 window.location.reload();
@@ -52,7 +63,16 @@ export class perfilUsuarioComponent{
         }, error =>{
             var errorMensaje = <any>error;
             if(errorMensaje != null){
-                alert('no se encontraron considencias');
+                Swal.fire({
+                    title: 'Lo sentimos :c',
+                    text: `Tu artísta no esta disponible en nuestro sistema por ahora`,
+                    imageUrl: '../../assets/img/flores.jpeg',
+                    imageWidth: 400,
+                    imageHeight: 200,
+                    imageAlt: 'Custom image', 
+                    confirmButtonColor: '#F76363',
+                    backdrop: ` rgba(0,0,0,0.5) left top no-repeat`
+                }).finally
             }
         })
     }
@@ -61,13 +81,40 @@ export class perfilUsuarioComponent{
         this.usuarioService.editarUsuario(this.usuarioActualizar._id, this.usuarioActualizar).subscribe(
             (response : any) => {
                 if(response.usuario){
-                    alert('Tus datos han sido actualizados correctamente');
+                    Swal.fire({
+                        title: 'Se han modificado tus datos!',
+                        text: `Disfruta tu nueva identidad`,
+                        imageUrl: '../../assets/img/flores.jpeg',
+                        imageWidth: 400,
+                        imageHeight: 200,
+                        imageAlt: 'Custom image', 
+                        confirmButtonColor: '#F76363',
+                        backdrop: ` rgba(0,0,0,0.5) left top no-repeat`
+                    }).finally
                     localStorage.setItem('sesion', JSON.stringify(this.usuarioActualizar));
                     // validacion y consumo del servicio de la carga de imagen
                     if(!this.archivoSubir){
-                        alert('No hay ninguna imagen');
+                        Swal.fire({
+                            title: 'Se han modificado tus datos!',
+                            text: `Disfruta tu nueva identidad`,
+                            imageUrl: '../../assets/img/flores.jpeg',
+                            imageWidth: 400,
+                            imageHeight: 200,
+                            imageAlt: 'Custom image', 
+                            confirmButtonColor: '#F76363',
+                            backdrop: ` rgba(0,0,0,0.5) left top no-repeat`
+                        }).finally
                     } else {
-                        alert(`Tu imagen es ${this.archivoSubir.name}`);
+                        Swal.fire({
+                            title: 'Imagen actualizada',
+                            text: `Tu imagen es ${this.archivoSubir.name}`,
+                            imageUrl: '../../assets/img/flores.jpeg',
+                            imageWidth: 400,
+                            imageHeight: 200,
+                            imageAlt: 'Custom image', 
+                            confirmButtonColor: '#F76363',
+                            backdrop: ` rgba(0,0,0,0.5) left top no-repeat`
+                        }).finally
                         this.usuarioService.cargarImagenUsuario(this.archivoSubir,this.usuarioActualizar._id).subscribe(
                             (result : any) =>{
                                 this.usuarioActualizar.imagen = result.imagen;
@@ -83,7 +130,16 @@ export class perfilUsuarioComponent{
 
                     // cierre validacion
                 } else {
-                    alert('No fue posible actualizar tus datos');
+                    Swal.fire({
+                        title: 'No fue posible actualizar tus datos',
+                        text: `Intenta más tarde`,
+                        imageUrl: '../../assets/img/flores.jpeg',
+                        imageWidth: 400,
+                        imageHeight: 200,
+                        imageAlt: 'Custom image', 
+                        confirmButtonColor: '#F76363',
+                        backdrop: ` rgba(0,0,0,0.5) left top no-repeat`
+                    }).finally
                 }
             }, error => {
                 if(error != null){

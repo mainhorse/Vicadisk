@@ -8,7 +8,7 @@ import { UsuarioService } from '../../service/usuario.service';
 // params -> Una ruta con parametros de angular ['perfil', nombre artista]
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
-
+import Swal from 'sweetalert2';
 
 @Component({
     selector : 'app-registro',
@@ -44,7 +44,16 @@ export class registroComponent{
                     alert(mensaje);
                     this.usuarioRegistro = new Usuario('','','','','','usuario','');
                 }else {
-                    alert(`Registro exitoso! Iniciar sesion con ${this.usuarioRegistro.correo}`);
+                    Swal.fire({
+                        title: 'Registro exitoso!',
+                        text: `Ya estas registrado! Iniciar sesion con ${this.usuarioRegistro.correo}`,
+                        imageUrl: '../../assets/img/flores.jpeg',
+                        imageWidth: 400,
+                        imageHeight: 200,
+                        imageAlt: 'Custom image', 
+                        confirmButtonColor: '#F76363',
+                        backdrop: ` rgba(0,0,0,0.5) left top no-repeat`
+                    }).finally
                     this.usuarioRegistro = new Usuario('','','','','','usuario','');
                     this._router.navigate(['/'])
                 }
@@ -52,7 +61,16 @@ export class registroComponent{
             error =>{
                 var errorMensaje = <any>error;
                 if(errorMensaje != null){
-                    alert ('Porfavor llenar los datos');
+                    Swal.fire({
+                        title: 'Por favor rellene los campos',
+                        text: `Rellena los datos guap@`,
+                        imageUrl: '../../assets/img/flores.jpeg',
+                        imageWidth: 400,
+                        imageHeight: 200,
+                        imageAlt: 'Custom image', 
+                        confirmButtonColor: '#F76363',
+                        backdrop: ` rgba(0,0,0,0.5) left top no-repeat`
+                    }).finally 
                 }
             }
         )

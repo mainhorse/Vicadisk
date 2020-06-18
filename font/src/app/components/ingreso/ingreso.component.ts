@@ -7,6 +7,8 @@ import { UsuarioService } from '../../service/usuario.service';
 // Importar el manejador de rutas
 import { Router, ActivatedRoute, Params, RouterLink } from '@angular/router';
 
+import Swal from 'sweetalert2';
+
 @Component({
     selector: 'app-ingreso',
     templateUrl :'ingreso.component.html',
@@ -38,7 +40,16 @@ export class ingresoComponent{
             let validar = response.usuario;
             this.usuarioIngreso = validar;
             if(!this.usuarioIngreso){
-                alert("Datos invalidos"); 
+                Swal.fire({
+                    title: 'Datos Invalidos',
+                    text: `Tus datos no coinciden :c`,
+                    imageUrl: '../../assets/img/flores.jpeg',
+                    imageWidth: 400,
+                    imageHeight: 200,
+                    imageAlt: 'Custom image', 
+                    confirmButtonColor: '#F76363',
+                    backdrop: ` rgba(0,0,0,0.5) left top no-repeat`
+                }).finally 
                 this.usuarioIngreso = new Usuario('','','','','','usuario','');  
             } else{
                                 

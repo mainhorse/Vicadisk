@@ -431,7 +431,7 @@ img{
 
 #contenido{
     background-color: #AC1212;
-    width: 90%;
+    width: 60%;
     height: 75%;
     margin-left: 5%;
     border: 2px solid rgba(0, 0, 0, 0.5);
@@ -439,6 +439,7 @@ img{
     float: left;
     margin-left: 20%;
     overflow: auto;
+    padding: 2%;
 }
 
 #cardCanciones{
