@@ -2,11 +2,16 @@ import{ Component, OnInit } from '@angular/core';
 import { Usuario } from '../../modelo/usuario';
 import { UsuarioService } from '../../service/usuario.service';
 
+
+import Swal from 'sweetalert2';
+
 @Component({
     selector: 'app-datos',
     templateUrl: 'datos.component.html',
     styleUrls: ['datos.component.css']
 })
+
+
 
 export class datosComponent implements OnInit{
     //Declaramos la variable usuarioActualizar
@@ -37,13 +42,41 @@ export class datosComponent implements OnInit{
             this.usuarioService.editarUsuario(this.usuarioActualizar._id, this.usuarioActualizar).subscribe(
                 (response : any) => {
                     if(response.usuario){
-                        alert('Tus datos han sido actualizados correctamente');
+                        Swal.fire({
+                            title: 'Se han modificado tus datos!',
+                            text: `Disfruta tu nueva identidad`,
+                            imageUrl: '../../assets/img/flores.jpeg',
+                            imageWidth: 400,
+                            imageHeight: 200,
+                            imageAlt: 'Custom image', 
+                            confirmButtonColor: '#F76363',
+                            backdrop: ` rgba(0,0,0,0.5) left top no-repeat`
+                        }).finally
                         localStorage.setItem('sesion', JSON.stringify(this.usuarioActualizar));
                         // validacion y consumo del servicio de la carga de imagen
                         if(!this.archivoSubir){
-                            alert('No hay ninguna imagen');
+                            Swal.fire({
+                                title: 'Has actualizado tus datos',
+                                text: `Disfruta tu nueva identidad`,
+                                imageUrl: '../../assets/img/flores.jpeg',
+                                imageWidth: 400,
+                                imageHeight: 200,
+                                imageAlt: 'Custom image', 
+                                confirmButtonColor: '#F76363',
+                                backdrop: ` rgba(0,0,0,0.5) left top no-repeat`
+                            }).finally
+                            
                         } else {
-                            alert(`Tu imagen es ${this.archivoSubir.name}`);
+                            Swal.fire({
+                                title: 'Has actualizado tus datos',
+                                text: `Disfruta tu nueva identidad`,
+                                imageUrl: '../../assets/img/flores.jpeg',
+                                imageWidth: 400,
+                                imageHeight: 200,
+                                imageAlt: 'Custom image', 
+                                confirmButtonColor: '#F76363',
+                                backdrop: ` rgba(0,0,0,0.5) left top no-repeat`
+                            }).finally
                             this.usuarioService.cargarImagenUsuario(this.archivoSubir,this.usuarioActualizar._id).subscribe(
                                 (result : any) =>{
                                     this.usuarioActualizar.imagen = result.imagen;
@@ -62,7 +95,16 @@ export class datosComponent implements OnInit{
 
                         // cierre validacion
                     } else {
-                        alert('No fue posible actualizar tus datos');
+                        Swal.fire({
+                            title: 'No fue posible actualizar tus datos',
+                            text: `Intenta más tarde`,
+                            imageUrl: '../../assets/img/flores.jpeg',
+                            imageWidth: 400,
+                            imageHeight: 200,
+                            imageAlt: 'Custom image', 
+                            confirmButtonColor: '#F76363',
+                            backdrop: ` rgba(0,0,0,0.5) left top no-repeat`
+                        }).finally
                     }
                 }, error => {
                     if(error != null){

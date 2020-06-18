@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Cancion } from '../../modelo/Cancion';
 import { CancionService } from 'src/app/service/cancion.service';
 
+import Swal from 'sweetalert2';
 
 @Component({
     selector: ' app-mainSudo',
@@ -41,14 +42,32 @@ export class mainSudoComponent{
         this.cancioneServicio.subirAlbum(this.musica).subscribe(
             (response : any) =>{
                 let album = response.album;
-                console.log(album);
+                
                 let mensaje = response.message;
-                console.log(mensaje);
+             
                 this.musica = album;
                 if(!this.musica._id){
-                    alert('Album no guardado');
+                    Swal.fire({
+                        title: 'Erro!',
+                        text: `No se ha podido guardar el album`,
+                        imageUrl: '../../assets/img/flores.jpeg',
+                        imageWidth: 400,
+                        imageHeight: 200,
+                        imageAlt: 'Custom image', 
+                        confirmButtonColor: '#F76363',
+                        backdrop: ` rgba(0,0,0,0.5) left top no-repeat`
+                    }).finally;
                 } else {
-                    alert(`Se ha guardado el album ${this.musica.album}`);
+                    Swal.fire({
+                        title: 'Genial!',
+                        text: `Se ha creado un nuevo álbum :D`,
+                        imageUrl: '../../assets/img/flores.jpeg',
+                        imageWidth: 400,
+                        imageHeight: 200,
+                        imageAlt: 'Custom image', 
+                        confirmButtonColor: '#F76363',
+                        backdrop: ` rgba(0,0,0,0.5) left top no-repeat`
+                    }).finally
                     localStorage.setItem('album', JSON.stringify(album));
                     window.location.reload();
                 }
@@ -66,11 +85,29 @@ export class mainSudoComponent{
            let busqueda = response.busqueda;
            
            if(response.busqueda){
-               alert("se encontraron concidencias");
+            Swal.fire({
+                title: 'Fabuloso!',
+                text: `Se ha encontrado tu búsqueda`,
+                imageUrl: '../../assets/img/flores.jpeg',
+                imageWidth: 400,
+                imageHeight: 200,
+                imageAlt: 'Custom image', 
+                confirmButtonColor: '#F76363',
+                backdrop: ` rgba(0,0,0,0.5) left top no-repeat`
+            }).finally
                localStorage.setItem('album', JSON.stringify(busqueda));
                window.location.reload();
            } else {
-               alert("no se encontraron resultados");
+            Swal.fire({
+                title: 'Oh no.....',
+                text: `No se encontró tu búsqueda D:`,
+                imageUrl: '../../assets/img/flores.jpeg',
+                imageWidth: 400,
+                imageHeight: 200,
+                imageAlt: 'Custom image', 
+                confirmButtonColor: '#F76363',
+                backdrop: ` rgba(0,0,0,0.5) left top no-repeat`
+            }).finally
            }
        }, error => {
            var errorMensaje = <any>error;
@@ -86,13 +123,31 @@ export class mainSudoComponent{
        this.cancioneServicio.CancionNueva(this.archivoSubir, this.album._id, this.musica.titulo).subscribe((response : any)=>{
            if(response.album){
             let mensaje = response.message;
-               alert(mensaje);
+            Swal.fire({
+                title: 'Magnífico!',
+                text: `Se ha subido tu archivo`,
+                imageUrl: '../../assets/img/flores.jpeg',
+                imageWidth: 400,
+                imageHeight: 200,
+                imageAlt: 'Custom image', 
+                confirmButtonColor: '#F76363',
+                backdrop: ` rgba(0,0,0,0.5) left top no-repeat`
+            }).finally
                localStorage.setItem('album', JSON.stringify(response.album));
                var rutaCaratula = this.url + 'ObtenerCaratula/' + this.datosAlbum.caratula;
                document.getElementById('fotoP').setAttribute('src', rutaCaratula);
                
            } else {
-               alert('Los datos no son validos');
+            Swal.fire({
+                title: 'Formato no válido',
+                text: `Debes subir una imagen o una canción `,
+                imageUrl: '../../assets/img/flores.jpeg',
+                imageWidth: 400,
+                imageHeight: 200,
+                imageAlt: 'Custom image', 
+                confirmButtonColor: '#F76363',
+                backdrop: ` rgba(0,0,0,0.5) left top no-repeat`
+            }).finally
            }
        })
    }
@@ -101,12 +156,30 @@ export class mainSudoComponent{
     this.cancioneServicio.ActualizarAlbum(this.album._id, this.musica).subscribe((response : any ) =>{
         let resultado = response.album;
         let mensaje = response.message;
-        console.log(resultado)
+       
         if(resultado){
-            alert(mensaje);
+            Swal.fire({
+                title: 'Se ha actualizado tu álbum',
+                text: `Ingresa canciones ahora :D`,
+                imageUrl: '../../assets/img/flores.jpeg',
+                imageWidth: 400,
+                imageHeight: 200,
+                imageAlt: 'Custom image', 
+                confirmButtonColor: '#F76363',
+                backdrop: ` rgba(0,0,0,0.5) left top no-repeat`
+            }).finally
             localStorage.setItem('album', JSON.stringify(resultado));
         } else {
-            alert("No se pudo actualizar el album");
+            Swal.fire({
+                title: 'Lo sentimos!',
+                text: `Intenta subir el álbum nuevamente`,
+                imageUrl: '../../assets/img/flores.jpeg',
+                imageWidth: 400,
+                imageHeight: 200,
+                imageAlt: 'Custom image', 
+                confirmButtonColor: '#F76363',
+                backdrop: ` rgba(0,0,0,0.5) left top no-repeat`
+            }).finally
         }
     })
    }
@@ -116,11 +189,29 @@ export class mainSudoComponent{
            let borrado = response.borrado;
            let mensaje = response.message;
            if(borrado){
-               alert(mensaje);
+            Swal.fire({
+                title: 'Adiós!',
+                text: `Se ha eliminado el álbum`,
+                imageUrl: '../../assets/img/flores.jpeg',
+                imageWidth: 400,
+                imageHeight: 200,
+                imageAlt: 'Custom image', 
+                confirmButtonColor: '#F76363',
+                backdrop: ` rgba(0,0,0,0.5) left top no-repeat`
+            }).finally
                localStorage.setItem('album', JSON.stringify(this.musica));
                window.location.reload();
            }else {
-               alert(mensaje);
+            Swal.fire({
+                title: 'Lo sentimos!',
+                text: `No se pudo eliminar el álbum escogido`,
+                imageUrl: '../../assets/img/flores.jpeg',
+                imageWidth: 400,
+                imageHeight: 200,
+                imageAlt: 'Custom image', 
+                confirmButtonColor: '#F76363',
+                backdrop: ` rgba(0,0,0,0.5) left top no-repeat`
+            }).finally
            }
        },error =>{
            var errorMensaje = <any>error;
@@ -147,7 +238,7 @@ export class mainSudoComponent{
         var album = datos.album;
         var artista = datos.artista;
         var titulos = datos.titulo; 
-        console.log(titulos.length) // este es el que importa
+    
 
         var titulo = document.createElement('div');
         var conTitulo = document.createTextNode('Album = ' + album);
