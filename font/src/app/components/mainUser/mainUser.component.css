@@ -1,12 +1,12 @@
 
 /* CONTAINER*/
 
-.s-titulo{
+.s-titulo-big{
   font: 700 3rem sans-serif;
   margin-top: 40px 40px;
   color: snow;
   text-shadow: -3px -3px 5px  grey ;
-  font-size: 20px;
+  font-size: 50px;
 }  
 .cards-s-big{
     margin:auto;
@@ -108,8 +108,8 @@
 }
 
 .slider img {
-    width: 100%;
-    height: 100%;
+    width: 210px;
+    height: 200px;
     border-radius: 10px;
 }
 
@@ -135,9 +135,9 @@
 .s-titulo{
   font: 700 3rem sans-serif;
   margin-top: 40px 40px;
-  color: snow;
-  text-shadow: -3px -3px 5px  grey ;
-  font-size: 30px;
+  color: black;
+  text-shadow: -3px -3px 5px  #721314 ;
+  font-size: 40px;
 }  
 
 .s-categories{
@@ -274,13 +274,14 @@ p {
 
     padding: 0 2rem;
     text-decoration: none;
-    text-transform: uppercase;
+  
     transition: 0.2s ease-out;
 }
 .cta:hover {
     background-color: #AF1012;
     box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     color: #fff;
+    margin-top: -70px;
     -moz-box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     -webkit-box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -339,15 +340,21 @@ img{
     transform: rotate(15deg);
 }
 
-#titBusqueda{
-    font-size: 30px;
-}
+
 
  .caratulas{
      width: 100%;
+<<<<<<< Updated upstream
      height: 100%;
      float: left;
  }
+=======
+     height: 100px;
+     float: left;
+ }
+
+
+>>>>>>> Stashed changes
 .cards{
     background-color: #AC1212;
     width: 90%;
@@ -366,6 +373,7 @@ img{
     height: 100%;
 }
 
+<<<<<<< Updated upstream
 p{
     width: 60%;
     height: 10%;
@@ -374,6 +382,8 @@ p{
     float: left;
 }
 
+=======
+>>>>>>> Stashed changes
 #derecho{
     border-radius: 10px;
     width: 100%;
@@ -431,15 +441,23 @@ p{
 
 #contenido{
     background-color: #AC1212;
+<<<<<<< Updated upstream
     width: 90%;
     height: 75%;
     margin-left: 5%;
+=======
+    width: 60%;
+    height: 55%;
+>>>>>>> Stashed changes
     border: 2px solid rgba(0, 0, 0, 0.5);
-    overflow: auto;
+    overflow: hidden;
     float: left;
+    margin-left: 20%;
+    overflow: auto;
 }
 
 #cardCanciones{
+   
     width : 100%;
     height: 20%;
 }
@@ -447,7 +465,7 @@ p{
 .audio{
     width: 250px;
     height: 80px;
-    margin-left: 3%;
+    margin-left: 8%;
     float: left;
 }
 
