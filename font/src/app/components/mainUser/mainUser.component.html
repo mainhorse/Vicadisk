@@ -1,199 +1,104 @@
-
 <section class="noticias">
   <article class="main_content">
     <div class="cards-s-big"></div>
     <section class="s-categories-big" id="grafica">
-      <h2 class="s-titulo">Mi Musica</h2>
+      <h2 class="s-titulo-big">Mi Musica</h2>
       <div class="s-container-big">
 
-          <div class="full-card-big-1">
-            <aside id="izquierdo">
-              <div id="caratula">
-                  <div class="slider">
-                      <ul>
-                          <li *ngFor="let img of imagen1">
-                              <img [src]="img" class="imagenslider" />
-                          
-                          </li>
-              
-                          <li *ngFor="let img of imagen1">
-                              <img [src]="img" class="imagenslider" />
-                            
-                          </li>
-              
-                          <li *ngFor="let img of imagen1">
-                              <img [src]="img" class="imagenslider" />
-                              
-                          </li>
-                          <li *ngFor="let img of imagen1">
-                              <img [src]="img" class="imagenslider" />
-                            
-                          </li>
-                      </ul>
-                  </div>
+        <div class="full-card-big-1">
+          <aside id="izquierdo">
+            <div id="caratula">
+              <div class="slider">
+                <ul>
+                  <li *ngFor="let canciones of canciones ">
+                    <img src="{{ this.url + 'ObtenerCaratula/' + canciones.caratula }}" alt="caratulas">
+
+                  </li>
+
+                  <li *ngFor="let canciones of canciones">
+                    <img src="{{ this.url + 'ObtenerCaratula/' + canciones.caratula }}" alt="caratulas">
+
+                  </li>
+
+                  <li *ngFor="let canciones of canciones">
+                    <img src="{{ this.url + 'ObtenerCaratula/' + canciones.caratula }}" alt="caratulas">
+
+                  </li>
+
+                  <li *ngFor="let canciones of canciones">
+                    <img src="{{ this.url + 'ObtenerCaratula/' + canciones.caratula }}" alt="caratulas">
+
+                  </li>
 
                   
+                </ul>
               </div>
-              <div id="resultado">
-                  <div id="canciones">
-                      <header id="busHeader">
-                          <img [src] = logo_busqueda alt="logo de busqueda" id="logoBusqueda">
-                          <div id="titBusqueda">
-                              Resultados
-                          </div>
-                          <div class="cards" *ngFor=" let canciones of canciones">
-                              <button class="listasRep" (click)="mostrarCanciones(canciones)"><img src = "{{ this.url + 'ObtenerCaratula/' + canciones.caratula }}" alt="caratulas" class="caratulas"></button>
-                              <p>{{canciones.artista}}</p>
+
+
+            </div>
+            <div id="resultado">
+              <div id="canciones">
+                <header id="busHeader">
+                  <img [src]=logo_busqueda alt="logo de busqueda" id="logoBusqueda">
+           
+                </header>
+                <section class="s-categories" id="grafica">
+                  <h2 class="s-titulo">Albumes</h2>
+                  <div class="s-container">
+                 
+
+                    <div *ngFor="let canciones of canciones ">
+                    <div class="full-card">
+                      <div class="card transition">
+                        <div class="card_circle transition">
+                         
+                            <img src="{{ this.url + 'ObtenerCaratula/' + canciones.caratula }}" alt="caratulas"
+                              class="logo">
+                              <h2 class="transition">{{canciones.artista}}</h2>
                               <p>{{canciones.album}}</p>
-                           </div>
-                      </header>
-                      <section class="s-categories" id="grafica">
-                          <h2 class="s-titulo">Albumes</h2>
-                          <div class="s-container">
-                            <div class="full-card">
-                              <div class="card transition">
-                                <div class="card_circle transition">
-                                  <div *ngFor="let img of imagen1">
-                                    <img [src]="img" class="logo" /></div>
-                                </div>
-                                <h2 class="transition">Rolling Stones</h2>
-                                <p>8888</p>
-                                <div class="cta-container transition"><a href="#" class="cta">Click Aqui</a></div>
-                              </div>
-                            </div>
-                            
-                            <div class="full-card">
-                              <div class="card transition">
-                                <div class="card_circle transition">
-                                  <div *ngFor="let img of imagen1">
-                                    <img [src]="img" class="logo" /></div>
-                                </div>
-                                <h2 class="transition">Rolling Stones</h2>
-                                <p>8888</p>
-                                <div class="cta-container transition"><a href="#" class="cta">Click Aqui</a></div>
-                              </div>
-                            </div>
-                  
-                            
-                            <div class="full-card">
-                              <div class="card transition">
-                                <div class="card_circle transition">
-                                  <div *ngFor="let img of imagen1">
-                                    <img [src]="img" class="logo" /></div>
-                                </div>
-                                <h2 class="transition">Rolling Stones</h2>
-                                <p>8888</p>
-                                <div class="cta-container transition"><a href="#" class="cta">Click Aqui</a></div>
-                              </div>
-                            </div>
-                    
-                          </div>
-                        </section>
+                              <div class="cta-container transition" (click)="mostrarCanciones(canciones)"><a href="#contenido" class="cta">Música</a></div>
+                        </div>
+                       
+                        
+                       
+                      </div>
+                    </div>
                   </div>
+
+                  </div>
+                </section>
               </div>
+            </div>
+
           </aside>
-          </div>
-      
-        
-          <div class="full-card-big">    
-            <aside id="derecho">
-              <div id="mp3"> 
-                  <div id="sonido">
-                    <div id="contenido">  
-                      <div class= "cardCanciones" *ngFor=" let reproducir of reproducir">
-                          <audio controls class="audio" src = "{{ this.url + 'ObtenerCancion/' + reproducir.cancion}}">
-                          </audio> 
-                      </div>   
-                    </div> 
-                  </div>
-                  <!-- <div class="contenedor-barra"> 
-                    <div class="line1"></div>
-                    <div class="line2"></div>
-                    <div class="line3"></div>
-                    <div class="line4"></div>
-                    <div class="line5"></div>
-                    <div class="line6"></div>
-                    <div class="line7"></div>
-                    <div class="line8"></div>
-                    <div class="line9"></div>
-                    <div class="line10"></div>
-                    <div class="line11"></div>
-                    <div class="line12"></div>
-                    <div class="line13"></div>
-                    <div class="line14"></div>
-                    <div class="line15"></div>
-                    <div class="line16"></div>
-                    <div class="line17"></div>
-                </div>
-                  <div><audio controls>
-                    <source src="horse.ogg" type="audio/ogg">
-                    <source src="horse.mp3" type="audio/mpeg">
-                  </audio>
-                </div>           
-                  <!-- Lineas Del FLow  -->                
-            
-              </div>  
-          </aside>
-          </div>
-        
-          <div class="full-card-big-1">
-            <aside id="izquierdo">
-              <div id="resultado">
-                  <div id="canciones"> 
-                      <header id="busHeader">
-                        <img [src]= cassete alt="casset" id="casset">
-                          <div id="titBusqueda">
-                              Resultados
-                          </div>
-                      </header>
-                      <section class="s-categories" id="grafica">
-                          <h2 class="s-titulo">Canciones</h2>
-                          <div class="s-container">
-                            <div class="full-card">
-                              <div class="card transition">
-                                <div class="card_circle transition">
-                                  <div *ngFor="let img of imagen1">
-                                    <img [src]="img" class="logo" /></div>
-                                </div>
-                                <h2 class="transition">Rolling Stones</h2>
-                                <p>8888</p>
-                                <div class="cta-container transition"><a href="#" class="cta">Click Aqui</a></div>
-                              </div>
-                            </div>
-                            
-                            <div class="full-card">
-                              <div class="card transition">
-                                <div class="card_circle transition">
-                                  <div *ngFor="let img of imagen1">
-                                    <img [src]="img" class="logo" /></div>
-                                </div>
-                                <h2 class="transition">Rolling Stones</h2>
-                                <p>8888</p>
-                                <div class="cta-container transition"><a href="#" class="cta">Click Aqui</a></div>
-                              </div>
-                            </div>
+        </div>
+
+        <div class="full-card-big-1">
+          <aside id="izquierdo">
+            <div id="resultado">
+              <div id="canciones">
+                <header id="busHeader">
+                  <img [src]=cassete alt="casset" id="casset">
                   
-                            
-                            <div class="full-card">
-                              <div class="card transition">
-                                <div class="card_circle transition">
-                                  <div *ngFor="let img of imagen1">
-                                    <img [src]="img" class="logo" /></div>
-                                </div>
-                                <h2 class="transition">Rolling Stones</h2>
-                                <p>8888</p>
-                                <div class="cta-container transition"><a href="#" class="cta">Click Aqui</a></div>
-                              </div>
-                            </div>
-                    
-                          </div>
-                        </section>
+                </header>
+                <section class="s-categories" id="grafica">
+                  <h2 class="s-titulo">Canciones</h2>
+                  <div class="s-container">
+                    <div id="sonido">
+                      <div id="contenido">
+                        <div class="cardCanciones" *ngFor=" let reproducir of reproducir">
+                          <audio controls class="audio" src="{{ this.url + 'ObtenerCancion/' + reproducir.cancion}}">
+                          </audio>
+                        </div>
+                      </div>
+                    </div>
                   </div>
+                </section>
               </div>
+            </div>
           </aside>
-          </div>
+        </div>
       </div>
     </section>
   </article>
 </section>
-
